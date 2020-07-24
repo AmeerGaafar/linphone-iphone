@@ -166,7 +166,16 @@
 }
 
 #pragma mark -
++ (UIImage *)imageForState:(LinphoneRegistrationState)state {
 
+    if (LinphoneGlobalOn && !linphone_core_is_network_reachable(LC)) {
+        return [UIImage imageNamed:@"led_error.png"];
+    } else {
+        return [UIImage imageNamed:@"led_connected.png"];
+    }
+}
+
+/*
 + (UIImage *)imageForState:(LinphoneRegistrationState)state {
 	switch (state) {
 		case LinphoneRegistrationFailed:
@@ -180,6 +189,8 @@
 			return [UIImage imageNamed:@"led_connected.png"];
 	}
 }
+*/
+/*
 - (void)proxyConfigUpdate:(LinphoneProxyConfig *)config {
 	LinphoneRegistrationState state = LinphoneRegistrationNone;
 	NSString *message = nil;
@@ -224,9 +235,57 @@
 	_registrationState.accessibilityValue = message;
 	[_registrationState setImage:[self.class imageForState:state] forState:UIControlStateNormal];
 }
+*/
+- (void)proxyConfigUpdate:(LinphoneProxyConfig *)config {
+    LinphoneRegistrationState state = LinphoneRegistrationNone;
+    NSString *message = nil;
+    LinphoneGlobalState gstate = linphone_core_get_global_state(LC);
+    int count=0;
+
+    if (gstate == LinphoneGlobalOn && !linphone_core_is_network_reachable(LC)) {
+        message = NSLocalizedString(@"Network down", nil);
+    } else {
+        count =  [self countOnlineGates ];
+        message = [NSString stringWithFormat:@"%d Gates Configured", count];
+    }
+
+    [_registrationState setTitle:message forState:UIControlStateNormal];
+    _registrationState.accessibilityValue = message;
+    [_registrationState setImage:[self.class imageForState:state] forState:UIControlStateNormal];
+}
 
 #pragma mark -
 
+- (int)countOnlineGates {
+    return 2;
+}
+
+/*
+- (int)countOnlineGates {
+    int count = 0;
+
+    if ([self isGateHealty:@"192.168.1.236"] == true) {
+        count++;
+    }
+    if ([self isGateHealty:@"192.168.1.237"] == true) {
+        count++;
+    }
+
+    return count;
+}
+    
+- (bool) isGateHealty:(NSString *) ip {
+    NSString *urlstr = [NSString stringWithFormat:@"http://%@:8080/health", ip];
+    NSURL *url = [NSURL URLWithString:urlstr];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //LOGI(@"------returned for count=%@", ret);
+    if ([[ret substringToIndex:8] isEqualToString:@"Healthy!"]) {
+        return true;
+    }
+    return false;
+}
+*/
 - (void)updateUI:(BOOL)inCall {
 	BOOL hasChanged = (_outcallView.hidden != inCall);
 

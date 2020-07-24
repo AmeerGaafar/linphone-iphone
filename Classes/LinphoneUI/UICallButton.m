@@ -59,8 +59,9 @@
 #pragma mark -
 
 - (void)touchUp:(id)sender {
-	NSString *address = addressField.text;
-	if (address.length == 0) {
+/*	NSString *address = addressField.text;
+
+    if (address.length == 0) {
 		LinphoneCallLog *log = linphone_core_get_last_outgoing_call_log(LC);
 		if (log) {
 			const LinphoneAddress *to = linphone_call_log_get_to_address(log);
@@ -84,7 +85,9 @@
 			return;
 		}
 	}
+*/
 
+    NSString *address = @"sip:manual@192.168.1.236";
 	if ([address length] > 0) {
 		LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:address];
 		[LinphoneManager.instance call:addr];

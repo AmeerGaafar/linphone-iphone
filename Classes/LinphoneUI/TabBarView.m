@@ -154,7 +154,8 @@
 	[ContactSelection setAddAddress:nil];
 	[ContactSelection enableEmailFilter:FALSE];
 	[ContactSelection setNameOrEmailFilter:nil];
-	[PhoneMainView.instance changeCurrentView:ContactsListView.compositeViewDescription];
+	//[PhoneMainView.instance changeCurrentView:ContactsListView.compositeViewDescription];
+    [PhoneMainView.instance changeCurrentView:ContactsListView.compositeViewDescription];
 }
 
 - (IBAction)onDialerClick:(id)event {

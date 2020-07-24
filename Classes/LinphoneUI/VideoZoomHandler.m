@@ -22,6 +22,14 @@
 #import "LinphoneManager.h"
 
 @implementation VideoZoomHandler
+- (void)fill {
+    
+    cx=0.5;
+    cy=0.5;
+    zoomLevel=2;
+    linphone_call_zoom_video(linphone_core_get_current_call(LC), zoomLevel, &cx, &cy);
+
+}
 
 - (void)zoomInOut:(UITapGestureRecognizer *)reco {
 	if (zoomLevel != 1)
@@ -36,6 +44,7 @@
 	} else {
 		cx = cy = 0.5;
 	}
+    //LOGI(@"Double tab in center level %.6f cx %.6f cy%.6f",zoomLevel,cx,cy);
 	linphone_call_zoom_video(linphone_core_get_current_call(LC), zoomLevel, &cx, &cy);
 }
 

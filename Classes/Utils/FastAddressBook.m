@@ -46,7 +46,17 @@
 	if ([LinphoneManager isMyself:addr] && [LinphoneUtils hasSelfAvatar]) {
 		return [LinphoneUtils selfAvatar];
 	}
-	return [FastAddressBook imageForContact:[FastAddressBook getContactWithAddress:addr]];
+    NSString *uri = [[NSString alloc] initWithUTF8String:linphone_address_as_string_uri_only(addr)];
+    UIImage *retImage;
+    if ([uri containsString:@"Front_Gate"]) {
+      retImage = [UIImage imageNamed:@"frontyard.jpg"];
+    } else if ([uri containsString:@"Backyard_Gate"]) {
+      retImage = [UIImage imageNamed:@"backyard.jpg"];
+    } else {
+        retImage = [FastAddressBook imageForContact:[FastAddressBook getContactWithAddress:addr]];
+    }
+    
+    return retImage;
 }
 
 + (UIImage *)imageForSecurityLevel:(LinphoneChatRoomSecurityLevel)level {

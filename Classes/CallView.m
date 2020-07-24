@@ -48,6 +48,7 @@ const NSInteger SECURE_BUTTON_TAG = 5;
 	if (self != nil) {
 		singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
 		videoZoomHandler = [[VideoZoomHandler alloc] init];
+        
 		videoHidden = TRUE;
 		[self updateCallView];
 	}
@@ -191,6 +192,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 	LinphoneCall *call = linphone_core_get_current_call(LC);
 	LinphoneCallState state = (call != NULL) ? linphone_call_get_state(call) : 0;
 	[self callUpdate:call state:state animated:FALSE];
+    
+    [videoZoomHandler fill];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -346,6 +350,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 }
 
 - (void)hideControls:(BOOL)hidden sender:(id)sender {
+    
 	if (videoHidden && hidden)
 		return;
 
@@ -393,7 +398,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 
 	[_videoGroup setAlpha:disabled ? 0 : 1];
 
-	[self hideControls:!disabled sender:nil];
+	//[self hideControls:!disabled sender:nil]; // i'd rather have the controls visible!
 
 	if (animation) {
 		[UIView commitAnimations];
@@ -401,7 +406,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 
 	// only show camera switch button if we have more than 1 camera
 	_videoCameraSwitch.hidden = (disabled || !LinphoneManager.instance.frontCamId);
-	_videoPreview.hidden = (disabled || !linphone_core_self_view_enabled(LC));
+    _videoPreview.hidden = true;/*(disabled || !linphone_core_self_view_enabled(LC));*/
 
 	if (hideControlsTimer != nil) {
 		[hideControlsTimer invalidate];
@@ -754,11 +759,21 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 #pragma mark - Action Functions
 
 - (IBAction)onNumpadClick:(id)sender {
-	if ([_numpadView isHidden]) {
-		[self hidePad:FALSE animated:ANIMATED];
-	} else {
-		[self hidePad:TRUE animated:ANIMATED];
-	}
+    const LinphoneCall *currentCall = linphone_core_get_current_call(LC);
+    const LinphoneAddress *addr = currentCall ? linphone_call_get_remote_address(currentCall) : NULL;
+        NSString *uri = [[NSString alloc] initWithUTF8String:linphone_address_as_string_uri_only(addr)];
+    NSURL *openGateUrl;
+    
+    if ([uri containsString:@"Front_Gate"]) {
+      openGateUrl = [NSURL URLWithString:@"http://V8Hq7ui626F8h0t:XYZ2iSF72U445WS@192.168.1.236:8080/open"];
+    } else if ([uri containsString:@"Backyard_Gate"]) {
+      openGateUrl = [NSURL URLWithString:@"http://V8Hq7ui626F8h0t:XYZ2iSF72U445WS@192.168.1.237:8080/open"];
+    }
+     LOGI(@"------opengate request=%@", openGateUrl);
+     NSData *data = [NSData dataWithContentsOfURL:openGateUrl];
+     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+     LOGI(@"------opengate response=%@", ret);
+
 }
 
 - (IBAction)onChatClick:(id)sender {

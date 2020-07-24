@@ -596,6 +596,8 @@
 
 + (void)setDisplayNameLabel:(UILabel *)label forContact:(Contact *)contact {
 	label.text = [FastAddressBook displayNameForContact:contact];
+	label.text = [label.text stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+
 #if 0
 	NSString *lLastName = CFBridgingRelease(ABRecordCopyValue(contact, kABPersonLastNameProperty));
 	NSString *lLocalizedLastName = [FastAddressBook localizedLabel:lLastName];
@@ -612,6 +614,8 @@
 	} else {
 		label.text = [FastAddressBook displayNameForAddress:addr];
 	}
+    
+    label.text = [label.text stringByReplacingOccurrencesOfString:@"_" withString:@" "];
 }
 
 + (void)setDisplayNameLabel:(UILabel *)label forAddress:(const LinphoneAddress *)addr withAddressLabel:(UILabel*)addressLabel{
@@ -632,7 +636,9 @@
 	if (range.location != NSNotFound) {
 		tmpAddress = [tmpAddress substringToIndex:range.location];
 	}
-	addressLabel.text = tmpAddress;
+    
+    addressLabel.text = tmpAddress;
+    addressLabel.text = [addressLabel.text stringByReplacingOccurrencesOfString:@"_" withString:@" "];
 }
 
 

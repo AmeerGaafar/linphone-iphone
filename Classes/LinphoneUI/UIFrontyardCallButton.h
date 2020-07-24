@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-iphone 
+ * This file is part of linphone-iphone
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,16 +17,15 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface VideoZoomHandler : NSObject {
-    float zoomLevel, cx, cy;
-    UIView* videoView;
+#import "UIIconButton.h"
+
+@interface UIFrontyardCallButton : UIIconButton {
 }
 
-- (void) setup: (UIView*) videoView;
-- (void) resetZoom;
-- (void) fill;
+@property(nonatomic, strong) IBOutlet UITextField *addressField;
+
+- (void)updateIcon;
 
 @end

@@ -37,5 +37,7 @@
 - (IBAction)onSecurityClick:(id)sender;
 - (IBAction)onSideMenuClick:(id)sender;
 - (IBAction)onRegistrationStateClick:(id)sender;
+- (int)countOnlineGates;
+//- (bool)isGateHealty:(NSString *)host;
 + (UIImage *)imageForState:(LinphoneRegistrationState)state;
 @end

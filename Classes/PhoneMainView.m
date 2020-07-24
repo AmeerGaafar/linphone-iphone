@@ -470,8 +470,17 @@ static RootViewManager *rootViewManagerInstance = nil;
 		linphone_core_set_device_rotation(LC, newRotation);
 	}
 }
+
 - (void)startUp {
-	@try {
+    @try {
+            [self changeCurrentView:DialerView.compositeViewDescription];
+        } @catch (NSException *exception) {
+          // we'll wait until the app transitions correctly
+        }
+}
+
+- (void)was_startUp {
+    @try {
 		LinphoneManager *lm = LinphoneManager.instance;
                 LOGI(@"%s", linphone_global_state_to_string(
                                 linphone_core_get_global_state(LC)));

@@ -63,7 +63,12 @@ static UICompositeViewDescription *compositeDescription = nil;
 	}
 
 	const LinphoneAddress *addr = linphone_call_get_remote_address(call);
-	[ContactDisplay setDisplayNameLabel:_nameLabel forAddress:addr withAddressLabel:_addressLabel];
+//	[ContactDisplay setDisplayNameLabel:_nameLabel forAddress:addr withAddressLabel:_addressLabel];
+
+    [ContactDisplay setDisplayNameLabel:_nameLabel forAddress:addr withAddressLabel:_addressLabel];
+    
+    [_nameLabel setText: [[_nameLabel text] stringByReplacingOccurrencesOfString:@"_" withString:@" "]];
+    
 	char *uri = linphone_address_as_string_uri_only(addr);
 	ms_free(uri);
 	[_avatarImage setImage:[FastAddressBook imageForAddress:addr] bordered:NO withRoundedRadius:YES];

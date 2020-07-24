@@ -59,7 +59,6 @@
 		369CCF81C921CD7C4E49A637 /* Pods_msgNotificationContent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E9DEDA2A78C6DBBD1A54DB /* Pods_msgNotificationContent.framework */; };
 		570742581D5A0691004B9C84 /* ShopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570742561D5A0691004B9C84 /* ShopView.xib */; };
 		570742611D5A09B8004B9C84 /* ShopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5707425F1D5A09B8004B9C84 /* ShopView.m */; };
-		570742671D5A63DB004B9C84 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570742661D5A63DB004B9C84 /* StoreKit.framework */; };
 		6112A01C243B31A700DBD5F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6112A01B243B31A600DBD5F5 /* GoogleService-Info.plist */; };
 		6112A01E243B5FD500DBD5F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6112A01D243B5FD500DBD5F5 /* GoogleService-Info.plist */; };
 		6134812D2406CECC00695B41 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6134812C2406CECC00695B41 /* ConfigManager.swift */; };
@@ -334,7 +333,6 @@
 		633FEE681D3CD5590014B822 /* footer_contacts_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 633FECAE1D3CD5570014B822 /* footer_contacts_disabled.png */; };
 		633FEE691D3CD5590014B822 /* footer_contacts_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 633FECAF1D3CD5570014B822 /* footer_contacts_disabled@2x.png */; };
 		633FEE6A1D3CD5590014B822 /* footer_dialer_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 633FECB01D3CD5570014B822 /* footer_dialer_default.png */; };
-		633FEE6B1D3CD5590014B822 /* footer_dialer_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 633FECB11D3CD5570014B822 /* footer_dialer_default@2x.png */; };
 		633FEE6C1D3CD5590014B822 /* footer_dialer_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 633FECB21D3CD5570014B822 /* footer_dialer_disabled.png */; };
 		633FEE6D1D3CD5590014B822 /* footer_dialer_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 633FECB31D3CD5570014B822 /* footer_dialer_disabled@2x.png */; };
 		633FEE6E1D3CD5590014B822 /* footer_history_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 633FECB41D3CD5570014B822 /* footer_history_default.png */; };
@@ -631,6 +629,25 @@
 		63FB30351A680E73008CA393 /* UIRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FB30341A680E73008CA393 /* UIRoundedImageView.m */; };
 		70E542F313E147E3002BA2C0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E542F213E147E3002BA2C0 /* OpenGLES.framework */; };
 		70E542F513E147EB002BA2C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E542F413E147EB002BA2C0 /* QuartzCore.framework */; };
+		8207616B24C82E2300142A3B /* footer_dialer_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8207616A24C82E2300142A3B /* footer_dialer_default@2x.png */; };
+		8207616D24C8570600142A3B /* aboutpicture@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8207616C24C8570600142A3B /* aboutpicture@2x.jpg */; };
+		8207616F24C8571100142A3B /* aboutpicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8207616E24C8571100142A3B /* aboutpicture.jpg */; };
+		8207617224C8681400142A3B /* splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 8207617024C8681400142A3B /* splashscreen.png */; };
+		8207617324C8681400142A3B /* splashscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8207617124C8681400142A3B /* splashscreen@2x.png */; };
+		8230C7DD24CA328500B03BE8 /* lock-closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8230C7D924CA328300B03BE8 /* lock-closed@2x.png */; };
+		8230C7DE24CA328500B03BE8 /* lock-closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8230C7DA24CA328300B03BE8 /* lock-closed.png */; };
+		8230C7DF24CA328500B03BE8 /* lock-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 8230C7DB24CA328400B03BE8 /* lock-open.png */; };
+		8230C7E024CA328500B03BE8 /* lock-open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8230C7DC24CA328400B03BE8 /* lock-open@2x.png */; };
+		8277AB6E24C6E5FA0063EBA0 /* UIBackyardCallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8277AB6D24C6E5FA0063EBA0 /* UIBackyardCallButton.m */; };
+		8277AB7124C6FF610063EBA0 /* UIFrontyardCallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8277AB7024C6FF610063EBA0 /* UIFrontyardCallButton.m */; };
+		828DD4B624C6D84A0033483E /* backyard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 828DD4B524C6D84A0033483E /* backyard.jpg */; };
+		828DD4B824C6D8580033483E /* frontyard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 828DD4B724C6D8580033483E /* frontyard.jpg */; };
+		82E1FC3A24C7A79700449E48 /* door_is_closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E1FC3624C7A79600449E48 /* door_is_closed@2x.png */; };
+		82E1FC3B24C7A79700449E48 /* door_is_closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E1FC3724C7A79600449E48 /* door_is_closed.png */; };
+		82E1FC3C24C7A79700449E48 /* door_is_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E1FC3824C7A79600449E48 /* door_is_open.png */; };
+		82E1FC3D24C7A79700449E48 /* door_is_open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E1FC3924C7A79600449E48 /* door_is_open@2x.png */; };
+		82F5E1E324C786D30035BDFB /* UIGateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F5E1E224C786D30035BDFB /* UIGateButton.m */; };
+		82F5E1E524C78F110035BDFB /* open_door_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 82F5E1E424C78F110035BDFB /* open_door_1.png */; };
 		8C1B67061E671826001EA2FE /* AudioHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B67051E671826001EA2FE /* AudioHelper.m */; };
 		8C2595DF1DEDCC8E007A6424 /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2595DE1DEDCC8E007A6424 /* CallKit.framework */; };
 		8C2A81951F87B8000012A66B /* chat_group_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A81931F87B7FF0012A66B /* chat_group_avatar@2x.png */; };
@@ -656,8 +673,6 @@
 		8CBD7BA920B6B82A00E5DCC0 /* UIChatConversationImdnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD7BAB20B6B82A00E5DCC0 /* UIChatConversationImdnTableViewCell.xib */; };
 		8CBD7BAC20B6B82F00E5DCC0 /* UIChatCreateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD7BAE20B6B82F00E5DCC0 /* UIChatCreateCollectionViewCell.xib */; };
 		8CD99A1C20908C27008A7CDA /* callkit_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD99A1B20908C27008A7CDA /* callkit_logo@2x.png */; };
-		8CD99A372090A824008A7CDA /* splashscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD99A352090A823008A7CDA /* splashscreen@2x.png */; };
-		8CD99A382090A824008A7CDA /* splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD99A362090A824008A7CDA /* splashscreen.png */; };
 		8CD99A3C2090B9FA008A7CDA /* ChatConversationImdnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD99A3B2090B9FA008A7CDA /* ChatConversationImdnView.m */; };
 		8CD99A422090CE6F008A7CDA /* UIChatConversationImdnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD99A412090CE6F008A7CDA /* UIChatConversationImdnTableViewCell.m */; };
 		8CDC61951F84D89B0087CF7F /* check_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CDC618C1F84D89B0087CF7F /* check_selected.png */; };
@@ -834,7 +849,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* LinphoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinphoneAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* LinphoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinphoneAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* linphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = linphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Sesame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sesame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2214EB7812F846B1002A5394 /* UICallButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICallButton.h; sourceTree = "<group>"; };
 		2214EB7912F846B1002A5394 /* UICallButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICallButton.m; sourceTree = "<group>"; };
@@ -909,7 +924,6 @@
 		570742571D5A0691004B9C84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShopView.xib; sourceTree = "<group>"; };
 		5707425F1D5A09B8004B9C84 /* ShopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopView.m; sourceTree = "<group>"; };
 		570742601D5A09B8004B9C84 /* ShopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopView.h; sourceTree = "<group>"; };
-		570742661D5A63DB004B9C84 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5E58962520DCE5700030868C /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		5EF0C33820C806A5005081B0 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		6112A01B243B31A600DBD5F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -1256,7 +1270,6 @@
 		633FECAE1D3CD5570014B822 /* footer_contacts_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer_contacts_disabled.png; sourceTree = "<group>"; };
 		633FECAF1D3CD5570014B822 /* footer_contacts_disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "footer_contacts_disabled@2x.png"; sourceTree = "<group>"; };
 		633FECB01D3CD5570014B822 /* footer_dialer_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer_dialer_default.png; sourceTree = "<group>"; };
-		633FECB11D3CD5570014B822 /* footer_dialer_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "footer_dialer_default@2x.png"; sourceTree = "<group>"; };
 		633FECB21D3CD5570014B822 /* footer_dialer_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer_dialer_disabled.png; sourceTree = "<group>"; };
 		633FECB31D3CD5570014B822 /* footer_dialer_disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "footer_dialer_disabled@2x.png"; sourceTree = "<group>"; };
 		633FECB41D3CD5570014B822 /* footer_history_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer_history_default.png; sourceTree = "<group>"; };
@@ -1598,7 +1611,31 @@
 		791017662FE117B9B12E8938 /* Pods-messagesNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-messagesNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-messagesNotification/Pods-messagesNotification.debug.xcconfig"; sourceTree = "<group>"; };
 		799BA1104845EB01ACE764D8 /* Pods-linphone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-linphone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-linphone/Pods-linphone.debug.xcconfig"; sourceTree = "<group>"; };
 		7D8CCFE176C634813E3A2593 /* Pods-liblinphoneTesterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liblinphoneTesterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-liblinphoneTesterTests/Pods-liblinphoneTesterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8200E7A524C8C0DC00A4EA78 /* msgNotificationServiceDistributionAdhoc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = msgNotificationServiceDistributionAdhoc.entitlements; sourceTree = "<group>"; };
+		8200E7A624C8C10800A4EA78 /* msgNotificationContentDistributionAdhoc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = msgNotificationContentDistributionAdhoc.entitlements; sourceTree = "<group>"; };
+		8207616A24C82E2300142A3B /* footer_dialer_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "footer_dialer_default@2x.png"; sourceTree = "<group>"; };
+		8207616C24C8570600142A3B /* aboutpicture@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aboutpicture@2x.jpg"; sourceTree = "<group>"; };
+		8207616E24C8571100142A3B /* aboutpicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aboutpicture.jpg; sourceTree = "<group>"; };
+		8207617024C8681400142A3B /* splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashscreen.png; sourceTree = "<group>"; };
+		8207617124C8681400142A3B /* splashscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splashscreen@2x.png"; sourceTree = "<group>"; };
+		8230C7D924CA328300B03BE8 /* lock-closed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock-closed@2x.png"; sourceTree = "<group>"; };
+		8230C7DA24CA328300B03BE8 /* lock-closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock-closed.png"; sourceTree = "<group>"; };
+		8230C7DB24CA328400B03BE8 /* lock-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock-open.png"; sourceTree = "<group>"; };
+		8230C7DC24CA328400B03BE8 /* lock-open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock-open@2x.png"; sourceTree = "<group>"; };
+		8277AB6D24C6E5FA0063EBA0 /* UIBackyardCallButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIBackyardCallButton.m; sourceTree = "<group>"; };
+		8277AB6F24C6FD9C0063EBA0 /* UIBackyardCallButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBackyardCallButton.h; sourceTree = "<group>"; };
+		8277AB7024C6FF610063EBA0 /* UIFrontyardCallButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIFrontyardCallButton.m; sourceTree = "<group>"; };
+		8277AB7224C6FF870063EBA0 /* UIFrontyardCallButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFrontyardCallButton.h; sourceTree = "<group>"; };
+		828DD4B524C6D84A0033483E /* backyard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backyard.jpg; sourceTree = "<group>"; };
+		828DD4B724C6D8580033483E /* frontyard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = frontyard.jpg; sourceTree = "<group>"; };
+		82E1FC3624C7A79600449E48 /* door_is_closed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door_is_closed@2x.png"; sourceTree = "<group>"; };
+		82E1FC3724C7A79600449E48 /* door_is_closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_is_closed.png; sourceTree = "<group>"; };
+		82E1FC3824C7A79600449E48 /* door_is_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_is_open.png; sourceTree = "<group>"; };
+		82E1FC3924C7A79600449E48 /* door_is_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door_is_open@2x.png"; sourceTree = "<group>"; };
 		82E9DEDA2A78C6DBBD1A54DB /* Pods_msgNotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_msgNotificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F5E1E124C786B90035BDFB /* UIGateButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIGateButton.h; sourceTree = "<group>"; };
+		82F5E1E224C786D30035BDFB /* UIGateButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIGateButton.m; sourceTree = "<group>"; };
+		82F5E1E424C78F110035BDFB /* open_door_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open_door_1.png; sourceTree = "<group>"; };
 		85FB19B6A8124D942C8471F1 /* Pods-linphoneTests.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-linphoneTests.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-linphoneTests/Pods-linphoneTests.distribution.xcconfig"; sourceTree = "<group>"; };
 		8B488C393394746F9D630789 /* Pods_latestChatroomsWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_latestChatroomsWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4C43A28E90775F6FCA2CEE /* Pods-msgNotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-msgNotificationContent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-msgNotificationContent/Pods-msgNotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1685,8 +1722,6 @@
 		8CBD7BE320B6C1E900E5DCC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UIChatCreateCollectionViewCell.strings; sourceTree = "<group>"; };
 		8CD0B3BE1FA22CBA008FEB16 /* libsoci_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsoci_core.a; path = "liblinphone-sdk/apple-darwin/lib/libsoci_core.a"; sourceTree = "<group>"; };
 		8CD99A1B20908C27008A7CDA /* callkit_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "callkit_logo@2x.png"; sourceTree = "<group>"; };
-		8CD99A352090A823008A7CDA /* splashscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splashscreen@2x.png"; sourceTree = "<group>"; };
-		8CD99A362090A824008A7CDA /* splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashscreen.png; sourceTree = "<group>"; };
 		8CD99A3B2090B9FA008A7CDA /* ChatConversationImdnView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatConversationImdnView.m; sourceTree = "<group>"; };
 		8CD99A3D2090BA24008A7CDA /* ChatConversationImdnView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatConversationImdnView.h; sourceTree = "<group>"; };
 		8CD99A402090CE25008A7CDA /* UIChatConversationImdnTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIChatConversationImdnTableViewCell.h; sourceTree = "<group>"; };
@@ -1955,7 +1990,6 @@
 				63CE58401C85EBF400304800 /* VideoToolbox.framework in Frameworks */,
 				6334DDFA1BBAC97C00631900 /* libsqlite3.dylib in Frameworks */,
 				152F22361B15E889008C0621 /* libxml2.dylib in Frameworks */,
-				570742671D5A63DB004B9C84 /* StoreKit.framework in Frameworks */,
 				22405EEE1600B4E400B92522 /* AssetsLibrary.framework in Frameworks */,
 				2274402F106F335E006EC466 /* AudioToolbox.framework in Frameworks */,
 				224567C2107B968500F10948 /* AVFoundation.framework in Frameworks */,
@@ -2143,7 +2177,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* linphone.app */,
+				1D6058910D05DD3D006BFB54 /* Sesame.app */,
 				61AE364B20C00B370089D9D3 /* linphoneExtension.appex */,
 				EA5F25D9232BD3E200475F2E /* msgNotificationService.appex */,
 				EA8CB827239F96CA00C330CC /* msgNotificationContent.appex */,
@@ -2270,6 +2304,12 @@
 				340751E6150F38FD00B89C47 /* UIVideoButton.m */,
 				24A345A51D95798A00881A5C /* UIShopTableCell.m */,
 				24A3459D1D95797700881A5C /* UIShopTableCell.xib */,
+				8277AB6D24C6E5FA0063EBA0 /* UIBackyardCallButton.m */,
+				8277AB6F24C6FD9C0063EBA0 /* UIBackyardCallButton.h */,
+				8277AB7024C6FF610063EBA0 /* UIFrontyardCallButton.m */,
+				8277AB7224C6FF870063EBA0 /* UIFrontyardCallButton.h */,
+				82F5E1E124C786B90035BDFB /* UIGateButton.h */,
+				82F5E1E224C786D30035BDFB /* UIGateButton.m */,
 			);
 			path = LinphoneUI;
 			sourceTree = "<group>";
@@ -2355,7 +2395,6 @@
 				70E542F413E147EB002BA2C0 /* QuartzCore.framework */,
 				22744043106F33FC006EC466 /* Security.framework */,
 				F0181B6B18BF7B1200A9A357 /* SenTestingKit.framework */,
-				570742661D5A63DB004B9C84 /* StoreKit.framework */,
 				2264B6D111200342002C2C53 /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				8C73477B1D9BA3A00022EE8C /* UserNotifications.framework */,
@@ -2436,6 +2475,19 @@
 		633FEBE11D3CD5570014B822 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8230C7DA24CA328300B03BE8 /* lock-closed.png */,
+				8230C7D924CA328300B03BE8 /* lock-closed@2x.png */,
+				8230C7DB24CA328400B03BE8 /* lock-open.png */,
+				8230C7DC24CA328400B03BE8 /* lock-open@2x.png */,
+				8207616E24C8571100142A3B /* aboutpicture.jpg */,
+				8207616C24C8570600142A3B /* aboutpicture@2x.jpg */,
+				82E1FC3724C7A79600449E48 /* door_is_closed.png */,
+				82E1FC3624C7A79600449E48 /* door_is_closed@2x.png */,
+				82E1FC3824C7A79600449E48 /* door_is_open.png */,
+				82E1FC3924C7A79600449E48 /* door_is_open@2x.png */,
+				82F5E1E424C78F110035BDFB /* open_door_1.png */,
+				828DD4B724C6D8580033483E /* frontyard.jpg */,
+				828DD4B524C6D84A0033483E /* backyard.jpg */,
 				633FEBE21D3CD5570014B822 /* add_field_default.png */,
 				633FEBE31D3CD5570014B822 /* add_field_default@2x.png */,
 				633FEBE41D3CD5570014B822 /* add_field_over.png */,
@@ -2668,7 +2720,7 @@
 				633FECAE1D3CD5570014B822 /* footer_contacts_disabled.png */,
 				633FECAF1D3CD5570014B822 /* footer_contacts_disabled@2x.png */,
 				633FECB01D3CD5570014B822 /* footer_dialer_default.png */,
-				633FECB11D3CD5570014B822 /* footer_dialer_default@2x.png */,
+				8207616A24C82E2300142A3B /* footer_dialer_default@2x.png */,
 				633FECB21D3CD5570014B822 /* footer_dialer_disabled.png */,
 				633FECB31D3CD5570014B822 /* footer_dialer_disabled@2x.png */,
 				633FECB41D3CD5570014B822 /* footer_history_default.png */,
@@ -2931,8 +2983,8 @@
 				633FED8D1D3CD5590014B822 /* speaker_disabled@2x.png */,
 				633FED8E1D3CD5590014B822 /* speaker_selected.png */,
 				633FED8F1D3CD5590014B822 /* speaker_selected@2x.png */,
-				8CD99A362090A824008A7CDA /* splashscreen.png */,
-				8CD99A352090A823008A7CDA /* splashscreen@2x.png */,
+				8207617024C8681400142A3B /* splashscreen.png */,
+				8207617124C8681400142A3B /* splashscreen@2x.png */,
 				633FED941D3CD5590014B822 /* valid_default.png */,
 				633FED951D3CD5590014B822 /* valid_default@2x.png */,
 				633FED961D3CD5590014B822 /* valid_disabled.png */,
@@ -3150,6 +3202,7 @@
 		EA5F25DA232BD3E200475F2E /* msgNotificationService */ = {
 			isa = PBXGroup;
 			children = (
+				8200E7A524C8C0DC00A4EA78 /* msgNotificationServiceDistributionAdhoc.entitlements */,
 				EAB783CF232F8E4D0076B1A0 /* msgNotificationService.entitlements */,
 				EAE6C88323FABF690076A018 /* Utils.swift */,
 				EA5F25DB232BD3E200475F2E /* NotificationService.swift */,
@@ -3162,6 +3215,7 @@
 		EA8CB82A239F96CA00C330CC /* msgNotificationContent */ = {
 			isa = PBXGroup;
 			children = (
+				8200E7A624C8C10800A4EA78 /* msgNotificationContentDistributionAdhoc.entitlements */,
 				6112A01B243B31A600DBD5F5 /* GoogleService-Info.plist */,
 				EA8CB83F239FD41400C330CC /* msgNotificationContent.entitlements */,
 				EA8CB82B239F96CA00C330CC /* NotificationViewController.swift */,
@@ -3197,7 +3251,7 @@
 			);
 			name = linphone;
 			productName = linphone;
-			productReference = 1D6058910D05DD3D006BFB54 /* linphone.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Sesame.app */;
 			productType = "com.apple.product-type.application";
 		};
 		61AE364A20C00B370089D9D3 /* linphoneExtension */ = {
@@ -3265,7 +3319,7 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = Z2V957B3D6;
+						DevelopmentTeam = A684YTVC56;
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -3288,7 +3342,7 @@
 					};
 					61AE364A20C00B370089D9D3 = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = Z2V957B3D6;
+						DevelopmentTeam = A684YTVC56;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -3298,7 +3352,7 @@
 					};
 					EA5F25D8232BD3E200475F2E = {
 						CreatedOnToolsVersion = 11.0;
-						DevelopmentTeam = Z2V957B3D6;
+						DevelopmentTeam = A684YTVC56;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -3308,7 +3362,7 @@
 					};
 					EA8CB826239F96CA00C330CC = {
 						CreatedOnToolsVersion = 10.3;
-						DevelopmentTeam = Z2V957B3D6;
+						DevelopmentTeam = A684YTVC56;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -3376,6 +3430,7 @@
 				633FEF021D3CD55A0014B822 /* options_disabled.png in Resources */,
 				633FEDC81D3CD5590014B822 /* call_missed.png in Resources */,
 				8CB2B8FA1F86229E0015CEE2 /* next_disabled.png in Resources */,
+				82F5E1E524C78F110035BDFB /* open_door_1.png in Resources */,
 				8CF25D961F9F336100BEA0C1 /* check_unselected.png in Resources */,
 				8C300D9A1E40E0CC00728EF3 /* lime_ko.png in Resources */,
 				633FEE311D3CD5590014B822 /* color_I.png in Resources */,
@@ -3406,7 +3461,6 @@
 				633FEE2E1D3CD5590014B822 /* color_F.png in Resources */,
 				633FEDC51D3CD5590014B822 /* call_hangup_disabled@2x.png in Resources */,
 				633FEEDF1D3CD55A0014B822 /* numpad_8_over~ipad.png in Resources */,
-				8CD99A372090A824008A7CDA /* splashscreen@2x.png in Resources */,
 				24BFAAA9209B0630004F47A7 /* linphone_logo@2x.png in Resources */,
 				633FEE071D3CD5590014B822 /* chat_add_default@2x.png in Resources */,
 				633FEF551D3CD55A0014B822 /* waiting_time@2x.png in Resources */,
@@ -3417,6 +3471,8 @@
 				63AADBFF1B6A0FF200AA16FD /* assistant_external_sip.rc in Resources */,
 				61CCC3E121933B660060EDEA /* UIDeviceCell.xib in Resources */,
 				633FEE9E1D3CD55A0014B822 /* numpad_0_over@2x.png in Resources */,
+				82E1FC3A24C7A79700449E48 /* door_is_closed@2x.png in Resources */,
+				8207616D24C8570600142A3B /* aboutpicture@2x.jpg in Resources */,
 				634610121B6140A500548952 /* CallOutgoingView.xib in Resources */,
 				8CE24F581F8268850077AC0A /* conference_delete@2x.png in Resources */,
 				633FEDC21D3CD5590014B822 /* call_hangup_default.png in Resources */,
@@ -3430,6 +3486,7 @@
 				633FED9C1D3CD5590014B822 /* add_field_default.png in Resources */,
 				633FEE411D3CD5590014B822 /* contacts_all_selected@2x.png in Resources */,
 				D38187F815FE355D00C3EDCA /* TabBarView.xib in Resources */,
+				82E1FC3D24C7A79700449E48 /* door_is_open@2x.png in Resources */,
 				633FEE2F1D3CD5590014B822 /* color_G.png in Resources */,
 				633FEECE1D3CD55A0014B822 /* numpad_6_over@2x.png in Resources */,
 				8C92ABE81FA773190006FB5D /* UIChatNotifiedEventCell.xib in Resources */,
@@ -3529,6 +3586,7 @@
 				633FEED01D3CD55A0014B822 /* numpad_6_over~ipad@2x.png in Resources */,
 				633FEEC81D3CD55A0014B822 /* numpad_5_over~ipad@2x.png in Resources */,
 				61586B91217A175D0038AC45 /* menu_recordings.png in Resources */,
+				8230C7DE24CA328500B03BE8 /* lock-closed.png in Resources */,
 				633FEF1B1D3CD55A0014B822 /* presence_away@2x.png in Resources */,
 				633FEE281D3CD5590014B822 /* checkbox_unchecked.png in Resources */,
 				633FEE9D1D3CD55A0014B822 /* numpad_0_over.png in Resources */,
@@ -3555,6 +3613,7 @@
 				633FEDEA1D3CD5590014B822 /* call_status_outgoing.png in Resources */,
 				633FEF511D3CD55A0014B822 /* valid_disabled@2x.png in Resources */,
 				633FEEBB1D3CD55A0014B822 /* numpad_4_default.png in Resources */,
+				8207616B24C82E2300142A3B /* footer_dialer_default@2x.png in Resources */,
 				633FEF2B1D3CD55A0014B822 /* route_earpiece_disabled@2x.png in Resources */,
 				639E9CA31C0DB7EA00019A75 /* UIChatBubbleTextCell.xib in Resources */,
 				633FEDD21D3CD5590014B822 /* call_quality_indicator_3.png in Resources */,
@@ -3571,6 +3630,7 @@
 				615A280F217F1FD50060F920 /* chat_add_group.png in Resources */,
 				633FEEC41D3CD55A0014B822 /* numpad_5_default@2x.png in Resources */,
 				633FEDAC1D3CD5590014B822 /* backspace_over.png in Resources */,
+				828DD4B824C6D8580033483E /* frontyard.jpg in Resources */,
 				639E9C9D1C0DB7DF00019A75 /* UICallPausedCell.xib in Resources */,
 				633FEE1B1D3CD5590014B822 /* chat_start_body_default@2x.png in Resources */,
 				633FEE021D3CD5590014B822 /* cancel_edit_default.png in Resources */,
@@ -3621,6 +3681,7 @@
 				61586B93217A17700038AC45 /* menu_recordings@2x.png in Resources */,
 				615A2834218071FF0060F920 /* security_toogle_background_grey.png in Resources */,
 				633FEDDE1D3CD5590014B822 /* call_start_body_over.png in Resources */,
+				82E1FC3B24C7A79700449E48 /* door_is_closed.png in Resources */,
 				24BFAAA0209B0630004F47A7 /* contacts_sip_default@2x.png in Resources */,
 				8CF25D9D1F9F76BD00BEA0C1 /* chat_group_informations.png in Resources */,
 				633FEDFB1D3CD5590014B822 /* camera_selected@2x.png in Resources */,
@@ -3629,9 +3690,11 @@
 				633FEEEC1D3CD55A0014B822 /* numpad_hash_default@2x.png in Resources */,
 				633FEE831D3CD5590014B822 /* led_disconnected@2x.png in Resources */,
 				244523BE1E8D3A6C0037A187 /* chat_unsecure.png in Resources */,
+				8230C7DD24CA328500B03BE8 /* lock-closed@2x.png in Resources */,
 				633FEE031D3CD5590014B822 /* cancel_edit_default@2x.png in Resources */,
 				633FEDE01D3CD5590014B822 /* call_start_body_over~ipad.png in Resources */,
 				8CBD7BA920B6B82A00E5DCC0 /* UIChatConversationImdnTableViewCell.xib in Resources */,
+				8230C7E024CA328500B03BE8 /* lock-open@2x.png in Resources */,
 				615A28442180C0900060F920 /* recording@2x.png in Resources */,
 				615A2813217F24D40060F920 /* security_1_indicator.png in Resources */,
 				24BFAAA7209B0630004F47A7 /* callkit_logo.png in Resources */,
@@ -3715,13 +3778,13 @@
 				633FEE5B1D3CD5590014B822 /* edit_default@2x.png in Resources */,
 				633FEDE11D3CD5590014B822 /* call_start_body_over~ipad@2x.png in Resources */,
 				633FEF4F1D3CD55A0014B822 /* valid_default@2x.png in Resources */,
-				8CD99A382090A824008A7CDA /* splashscreen.png in Resources */,
 				633FEE241D3CD5590014B822 /* chat_start_body_over~ipad.png in Resources */,
 				8C2A81951F87B8000012A66B /* chat_group_avatar@2x.png in Resources */,
 				633FEE091D3CD5590014B822 /* chat_add_disabled@2x.png in Resources */,
 				633FEE191D3CD5590014B822 /* chat_send_over@2x.png in Resources */,
 				633FEF181D3CD55A0014B822 /* pause_small_over_selected.png in Resources */,
 				633FEE001D3CD5590014B822 /* camera_switch_over.png in Resources */,
+				8207616F24C8571100142A3B /* aboutpicture.jpg in Resources */,
 				633FEF401D3CD55A0014B822 /* select_all_default.png in Resources */,
 				633FEDF01D3CD5590014B822 /* call_transfer_disabled.png in Resources */,
 				633FEE351D3CD5590014B822 /* conference_exit_default@2x.png in Resources */,
@@ -3744,6 +3807,7 @@
 				633FEF411D3CD55A0014B822 /* select_all_default@2x.png in Resources */,
 				633FEEFD1D3CD55A0014B822 /* options_add_call_default@2x.png in Resources */,
 				633FEEA81D3CD55A0014B822 /* numpad_1_over~ipad@2x.png in Resources */,
+				8207617324C8681400142A3B /* splashscreen@2x.png in Resources */,
 				D38187AD15FE340100C3EDCA /* ChatConversationView.xib in Resources */,
 				633FEE7C1D3CD5590014B822 /* history_missed_disabled.png in Resources */,
 				CF1DE92E210A0F5D00A0A97E /* UILinphoneAudioPlayer.xib in Resources */,
@@ -3832,7 +3896,6 @@
 				633FEE5D1D3CD5590014B822 /* edit_disabled@2x.png in Resources */,
 				615A2832218071F30060F920 /* security_toogle_background_green@2x.png in Resources */,
 				633FEEC11D3CD55A0014B822 /* numpad_4~ipad.png in Resources */,
-				633FEE6B1D3CD5590014B822 /* footer_dialer_default@2x.png in Resources */,
 				633FEE0E1D3CD5590014B822 /* chat_attachment_over.png in Resources */,
 				633FEE7B1D3CD5590014B822 /* history_missed_default@2x.png in Resources */,
 				633FEEC71D3CD55A0014B822 /* numpad_5_over~ipad.png in Resources */,
@@ -3846,6 +3909,7 @@
 				D38187C115FE345B00C3EDCA /* DialerView.xib in Resources */,
 				D37EE10D16035793003608A6 /* ImageView.xib in Resources */,
 				633FEE9F1D3CD55A0014B822 /* numpad_0_over~ipad.png in Resources */,
+				828DD4B624C6D84A0033483E /* backyard.jpg in Resources */,
 				633FEED51D3CD55A0014B822 /* numpad_7_over.png in Resources */,
 				633FEE561D3CD5590014B822 /* dialer_back_disabled.png in Resources */,
 				633FEDBF1D3CD5590014B822 /* call_back_default@2x.png in Resources */,
@@ -3855,6 +3919,7 @@
 				63AADBE81B6A0FF200AA16FD /* Localizable.strings in Resources */,
 				633FEEF21D3CD55A0014B822 /* numpad_hash~ipad@2x.png in Resources */,
 				633FEE3F1D3CD5590014B822 /* contacts_all_disabled@2x.png in Resources */,
+				8230C7DF24CA328500B03BE8 /* lock-open.png in Resources */,
 				633FEF3B1D3CD55A0014B822 /* security_ko@2x.png in Resources */,
 				633FEE4A1D3CD5590014B822 /* delete_disabled.png in Resources */,
 				614D09CE21E74D5400C43EDF /* GoogleService-Info.plist in Resources */,
@@ -3876,6 +3941,7 @@
 				633FEE681D3CD5590014B822 /* footer_contacts_disabled.png in Resources */,
 				633FEDB71D3CD5590014B822 /* call_alt_start_default@2x.png in Resources */,
 				D3D5126C160B3A8E00946DF8 /* AssistantViewScreens.xib in Resources */,
+				82E1FC3C24C7A79700449E48 /* door_is_open.png in Resources */,
 				63AADBEA1B6A0FF200AA16FD /* Images.xcassets in Resources */,
 				633FEECB1D3CD55A0014B822 /* numpad_6_default.png in Resources */,
 				633FEDC71D3CD5590014B822 /* call_incoming@2x.png in Resources */,
@@ -3899,6 +3965,7 @@
 				633FEE661D3CD5590014B822 /* footer_contacts_default.png in Resources */,
 				633FEDC11D3CD5590014B822 /* call_back_disabled@2x.png in Resources */,
 				633FEEEE1D3CD55A0014B822 /* numpad_hash_over@2x.png in Resources */,
+				8207617224C8681400142A3B /* splashscreen.png in Resources */,
 				633FEDD01D3CD5590014B822 /* call_quality_indicator_2.png in Resources */,
 				633FEE551D3CD5590014B822 /* dialer_back_default@2x.png in Resources */,
 				633FEF361D3CD55A0014B822 /* routes_disabled.png in Resources */,
@@ -4252,6 +4319,7 @@
 				D32B9DFC15A2F131000B6DEC /* FastAddressBook.m in Sources */,
 				D350F20E15A43BB100149E54 /* AssistantView.m in Sources */,
 				D3F795D615A582810077328B /* ChatConversationView.m in Sources */,
+				82F5E1E324C786D30035BDFB /* UIGateButton.m in Sources */,
 				61AEBEC22191D7C800F35E7F /* UIDevicesDetails.m in Sources */,
 				D32B6E2915A5BC440033019F /* ChatConversationTableView.m in Sources */,
 				D3A8BB7015A6C7D500F96BE5 /* UIChatBubbleTextCell.m in Sources */,
@@ -4259,6 +4327,7 @@
 				D3128FE115AABC7E00A2147A /* ContactDetailsView.m in Sources */,
 				6135761F240E81D0005304D4 /* UIInterfaceStyleToggleButton.m in Sources */,
 				D37C639B15AADEF6009D0BAC /* ContactDetailsTableView.m in Sources */,
+				8277AB7124C6FF610063EBA0 /* UIFrontyardCallButton.m in Sources */,
 				63E59A3F1ADE70D900646FB3 /* InAppProductsManager.m in Sources */,
 				D3C6526715AC1A8F0092A874 /* UIContactDetailsCell.m in Sources */,
 				631348301B6F7B6600C6BDCB /* UIRoundBorderedButton.m in Sources */,
@@ -4292,6 +4361,7 @@
 				D3807FFA15C2894A005BE9BC /* IASKPSTextFieldSpecifierViewCell.m in Sources */,
 				D3807FFC15C2894A005BE9BC /* IASKPSTitleValueSpecifierViewCell.m in Sources */,
 				D3807FFE15C2894A005BE9BC /* IASKSlider.m in Sources */,
+				8277AB6E24C6E5FA0063EBA0 /* UIBackyardCallButton.m in Sources */,
 				D380800015C2894A005BE9BC /* IASKSwitch.m in Sources */,
 				D380800215C2894A005BE9BC /* IASKTextField.m in Sources */,
 				D380801315C299D0005BE9BC /* ColorSpaceUtilites.m in Sources */,
@@ -4889,7 +4959,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4916,7 +4986,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MARKETING_VERSION = 4.3.1;
+				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"-DBCTBX_LOG_DOMAIN=\\\"ios\\\"",
 					"-DCHECK_VERSION_UPDATE=FALSE",
@@ -4926,9 +4996,9 @@
 					"-DLINPHONE_SDK_VERSION=\\\"4.4.0\\\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)app";
-				PRODUCT_NAME = linphone;
+				PRODUCT_NAME = Sesame;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
@@ -5015,7 +5085,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5039,7 +5109,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MARKETING_VERSION = 4.3.1;
+				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"-DBCTBX_LOG_DOMAIN=\\\"ios\\\"",
 					"-DCHECK_VERSION_UPDATE=FALSE",
@@ -5049,9 +5119,9 @@
 					"-DLINPHONE_SDK_VERSION=\\\"4.4.0\\\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)app";
-				PRODUCT_NAME = linphone;
+				PRODUCT_NAME = Sesame;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
@@ -5137,7 +5207,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5161,7 +5231,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MARKETING_VERSION = 4.3.1;
+				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"-DBCTBX_LOG_DOMAIN=\\\"ios\\\"",
 					"-DCHECK_VERSION_UPDATE=FALSE",
@@ -5171,9 +5241,9 @@
 					"-DLINPHONE_SDK_VERSION=\\\"4.4.0\\\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)app";
-				PRODUCT_NAME = linphone;
+				PRODUCT_NAME = Sesame;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
@@ -5258,7 +5328,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5282,7 +5352,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MARKETING_VERSION = 4.3.1;
+				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"-DBCTBX_LOG_DOMAIN=\\\"ios\\\"",
 					"-DCHECK_VERSION_UPDATE=FALSE",
@@ -5292,9 +5362,9 @@
 					"-DLINPHONE_SDK_VERSION=\\\"4.4.0\\\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)app";
-				PRODUCT_NAME = linphone;
+				PRODUCT_NAME = Sesame;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
@@ -5331,7 +5401,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5343,7 +5413,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MARKETING_VERSION = 4.3.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.linphoneExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.linphoneExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -5373,7 +5443,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5384,7 +5454,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MARKETING_VERSION = 4.3.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.linphoneExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.linphoneExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_SWIFT_SYMBOLS = NO;
@@ -5414,7 +5484,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5425,7 +5495,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MARKETING_VERSION = 4.3.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.linphoneExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.linphoneExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -5456,7 +5526,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5467,7 +5537,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MARKETING_VERSION = 4.3.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.linphoneExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.linphoneExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -5550,7 +5620,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5569,7 +5639,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.msgNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.msgNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -5606,7 +5676,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5621,7 +5691,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.msgNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.msgNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -5658,7 +5728,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5673,7 +5743,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.msgNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.msgNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -5703,14 +5773,14 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = msgNotificationService/msgNotificationService.entitlements;
+				CODE_SIGN_ENTITLEMENTS = msgNotificationService/msgNotificationServiceDistributionAdhoc.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5725,7 +5795,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.msgNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.msgNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -5761,7 +5831,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5780,7 +5850,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.msgNotificationContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.msgNotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -5816,7 +5886,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5831,7 +5901,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.msgNotificationContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.msgNotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -5867,7 +5937,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5882,7 +5952,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.msgNotificationContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.msgNotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -5911,14 +5981,14 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = msgNotificationContent/msgNotificationContent.entitlements;
+				CODE_SIGN_ENTITLEMENTS = msgNotificationContent/msgNotificationContentDistributionAdhoc.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z2V957B3D6;
+				DEVELOPMENT_TEAM = A684YTVC56;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -5933,7 +6003,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone.msgNotificationContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agmentors.sesameios.msgNotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

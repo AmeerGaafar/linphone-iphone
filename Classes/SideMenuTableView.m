@@ -57,15 +57,15 @@
 
 	_sideMenuEntries = [[NSMutableArray alloc] init];
 
-	[_sideMenuEntries
+	/*[_sideMenuEntries
 		addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Assistant", nil)
                                                  image:[UIImage imageNamed:@"menu_assistant.png"]
 											  tapBlock:^() {
 												[PhoneMainView.instance
 													changeCurrentView:AssistantView.compositeViewDescription];
-											  }]];
+											  }]];*/
 	BOOL mustLink = ([LinphoneManager.instance lpConfigIntForKey:@"must_link_account_time"] > 0);
-	if (mustLink) {
+	/*if (mustLink) {
 		[_sideMenuEntries
 			addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Link my account", nil)
                                                      image:[UIImage imageNamed:@"menu_link_account.png"]
@@ -73,7 +73,7 @@
 													[PhoneMainView.instance
 														changeCurrentView:AssistantLinkView.compositeViewDescription];
 												  }]];
-	}
+	}*/
 
     
 	[_sideMenuEntries
@@ -83,14 +83,14 @@
 												[PhoneMainView.instance
 													changeCurrentView:SettingsView.compositeViewDescription];
 											  }]];
-    [_sideMenuEntries
+    /*[_sideMenuEntries
      addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Recordings", nil)
                                               image:[UIImage imageNamed:@"menu_recordings.png"]
                                            tapBlock:^() {
                                                [PhoneMainView.instance
                                                 changeCurrentView:RecordingsListView.compositeViewDescription];
-                                           }]];
-	InAppProductsManager *iapm = LinphoneManager.instance.iapManager;
+                                           }]];*/
+	/*InAppProductsManager *iapm = LinphoneManager.instance.iapManager;
 	if (iapm.enabled){
 		[_sideMenuEntries
 			addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Shop", nil)
@@ -99,7 +99,7 @@
 													[PhoneMainView.instance
 														changeCurrentView:ShopView.compositeViewDescription];
 												  }]];
-	}
+	}*/
 	[_sideMenuEntries addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"About", nil)
                                                                image:[UIImage imageNamed:@"menu_about.png"]
 															tapBlock:^() {
