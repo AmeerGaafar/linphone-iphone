@@ -259,33 +259,6 @@
 - (int)countOnlineGates {
     return 2;
 }
-
-/*
-- (int)countOnlineGates {
-    int count = 0;
-
-    if ([self isGateHealty:@"192.168.1.236"] == true) {
-        count++;
-    }
-    if ([self isGateHealty:@"192.168.1.237"] == true) {
-        count++;
-    }
-
-    return count;
-}
-    
-- (bool) isGateHealty:(NSString *) ip {
-    NSString *urlstr = [NSString stringWithFormat:@"http://%@:8080/health", ip];
-    NSURL *url = [NSURL URLWithString:urlstr];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    //LOGI(@"------returned for count=%@", ret);
-    if ([[ret substringToIndex:8] isEqualToString:@"Healthy!"]) {
-        return true;
-    }
-    return false;
-}
-*/
 - (void)updateUI:(BOOL)inCall {
 	BOOL hasChanged = (_outcallView.hidden != inCall);
 

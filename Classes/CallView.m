@@ -763,11 +763,25 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
     const LinphoneAddress *addr = currentCall ? linphone_call_get_remote_address(currentCall) : NULL;
         NSString *uri = [[NSString alloc] initWithUTF8String:linphone_address_as_string_uri_only(addr)];
     NSURL *openGateUrl;
-    
-    if ([uri containsString:@"Front_Gate"]) {
-      openGateUrl = [NSURL URLWithString:@"http://V8Hq7ui626F8h0t:XYZ2iSF72U445WS@192.168.1.236:8080/open"];
-    } else if ([uri containsString:@"Backyard_Gate"]) {
-      openGateUrl = [NSURL URLWithString:@"http://V8Hq7ui626F8h0t:XYZ2iSF72U445WS@192.168.1.237:8080/open"];
+
+    NSString *user=[LinphoneManager.instance lpConfigStringForKey:@"door_open_auth_user" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *password=[LinphoneManager.instance lpConfigStringForKey:@"door_open_auth_pass" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *door1Name=[LinphoneManager.instance lpConfigStringForKey:@"door1_name" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *door1Host=[LinphoneManager.instance lpConfigStringForKey:@"door1_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *door2Name=[LinphoneManager.instance lpConfigStringForKey:@"door2_name" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *door2Host=[LinphoneManager.instance lpConfigStringForKey:@"door2_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *addressTemplate=[LinphoneManager.instance lpConfigStringForKey:@"door_open_template" inSection:@"doorphone" withDefault:@"unknown"];
+
+    if ([uri containsString:door1Name]) {
+        openGateUrl=[NSURL URLWithString: [NSString stringWithFormat:addressTemplate, user,password,door1Host]];
+    } else if ([uri containsString:door2Name]) {
+      openGateUrl=[NSURL URLWithString: [NSString stringWithFormat:addressTemplate, user,password,door2Host]];
     }
      LOGI(@"------opengate request=%@", openGateUrl);
      NSData *data = [NSData dataWithContentsOfURL:openGateUrl];

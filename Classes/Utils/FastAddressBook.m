@@ -48,10 +48,14 @@
 	}
     NSString *uri = [[NSString alloc] initWithUTF8String:linphone_address_as_string_uri_only(addr)];
     UIImage *retImage;
-    if ([uri containsString:@"Front_Gate"]) {
-      retImage = [UIImage imageNamed:@"frontyard.jpg"];
-    } else if ([uri containsString:@"Backyard_Gate"]) {
-      retImage = [UIImage imageNamed:@"backyard.jpg"];
+
+    NSString * door1=[LinphoneManager.instance lpConfigStringForKey:@"door1_name" inSection:@"doorphone" withDefault:@"avatar"];
+    NSString * door2=[LinphoneManager.instance lpConfigStringForKey:@"door2_name" inSection:@"doorphone" withDefault:@"avatar"];
+    
+    if ([uri containsString:door1]) {
+      retImage = [UIImage imageNamed: [NSString stringWithFormat:@"%@.jpg", door1]];
+    } else if ([uri containsString:door2]) {
+      retImage = [UIImage imageNamed: [NSString stringWithFormat:@"%@.jpg", door2]];
     } else {
         retImage = [FastAddressBook imageForContact:[FastAddressBook getContactWithAddress:addr]];
     }

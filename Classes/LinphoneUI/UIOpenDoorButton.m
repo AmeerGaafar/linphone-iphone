@@ -17,21 +17,22 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "UIGateButton.h"
+#import "UIOpenDoorButton.h"
 
-@implementation UIGateButton
+@implementation UIOpenDoorButton
 
 #pragma mark - Lifecycle Functions
 
-- (void)initUIGateButton {
+- (void)initUIOpenDoorButton {
     [self update];
     [self addTarget:self action:@selector(touchUp:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+
 - (id)init {
     self = [super init];
     if (self) {
-        [self initUIGateButton];
+        [self initUIOpenDoorButton];
     }
     return self;
 }
@@ -39,7 +40,7 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initUIGateButton];
+        [self initUIOpenDoorButton];
     }
     return self;
 }
@@ -47,7 +48,7 @@
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super initWithCoder:decoder];
     if (self) {
-        [self initUIGateButton];
+        [self initUIOpenDoorButton];
     }
     return self;
 }
@@ -86,7 +87,7 @@
     return self.selected;
 }
 
-#pragma mark - UIGateButtonDelegate Functions
+#pragma mark - UIOpenDoorButtonDelegate Functions
 
 - (void)onOn {
     /*[NSException raise:NSInternalInconsistencyException

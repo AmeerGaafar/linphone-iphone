@@ -426,7 +426,7 @@
                                             </state>
                                             <state key="highlighted" backgroundImage="color_I.png"/>
                                         </button>
-                                        <button opaque="NO" tag="57" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRu-dB-r3e" userLabel="numpadButton" customClass="UIGateButton">
+                                        <button opaque="NO" tag="57" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRu-dB-r3e" userLabel="numpadButton" customClass="UIOpenDoorButton">
                                             <rect key="frame" x="310" y="0.0" width="104" height="63"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="Back"/>
@@ -914,7 +914,7 @@
                                     <state key="normal" image="button:GQK-F8-oLr:image">
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <state key="disabled" image="E30D7EB9-DB35-438E-9307-86DE17E891AE"/>
+                                    <state key="disabled" image="9C0D896B-58C4-44C3-81E6-AF6BDEF699E2"/>
                                     <state key="highlighted" backgroundImage="color_E.png"/>
                                     <connections>
                                         <action selector="onRecordClick:" destination="-1" eventType="touchUpInside" id="IFO-tT-oog"/>
@@ -1096,7 +1096,7 @@
         </view>
     </objects>
     <resources>
-        <image name="E30D7EB9-DB35-438E-9307-86DE17E891AE" width="33" height="33">
+        <image name="9C0D896B-58C4-44C3-81E6-AF6BDEF699E2" width="33" height="33">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
 ExQZHh8jJCsuMTtDR0tPUlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdz

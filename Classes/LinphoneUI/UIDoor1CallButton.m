@@ -17,25 +17,25 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "UIFrontyardCallButton.h"
+#import "UIDoor1CallButton.h"
 #import "LinphoneManager.h"
 
 #import <CoreTelephony/CTCallCenter.h>
 
-@implementation UIFrontyardCallButton
+@implementation UIDoor1CallButton
 
 @synthesize addressField;
 
 #pragma mark - Lifecycle Functions
 
-- (void)initUIFrontyardCallButton {
+- (void)initUIDoor1CallButton {
     [self addTarget:self action:@selector(touchUp:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (id)init {
     self = [super init];
     if (self) {
-        [self initUIFrontyardCallButton];
+        [self initUIDoor1CallButton];
     }
     return self;
 }
@@ -43,7 +43,7 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initUIFrontyardCallButton];
+        [self initUIDoor1CallButton];
     }
     return self;
 }
@@ -51,7 +51,7 @@
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super initWithCoder:decoder];
     if (self) {
-        [self initUIFrontyardCallButton];
+        [self initUIDoor1CallButton];
     }
     return self;
 }
@@ -59,35 +59,15 @@
 #pragma mark -
 
 - (void)touchUp:(id)sender {
-/*    NSString *address = addressField.text;
 
-    if (address.length == 0) {
-        LinphoneCallLog *log = linphone_core_get_last_outgoing_call_log(LC);
-        if (log) {
-            const LinphoneAddress *to = linphone_call_log_get_to_address(log);
-            const char *domain = linphone_address_get_domain(to);
-            char *bis_address = NULL;
-            LinphoneProxyConfig *def_proxy = linphone_core_get_default_proxy_config(LC);
+    NSString *doorName=[LinphoneManager.instance lpConfigStringForKey:@"door1_name" inSection:@"doorphone" withDefault:@"unknown"];
 
-            // if the 'to' address is on the default proxy, only present the username
-            if (def_proxy) {
-                const char *def_domain = linphone_proxy_config_get_domain(def_proxy);
-                if (def_domain && domain && !strcmp(domain, def_domain)) {
-                    bis_address = ms_strdup(linphone_address_get_username(to));
-                }
-            }
-            if (bis_address == NULL) {
-                bis_address = linphone_address_as_string_uri_only(to);
-            }
-            [addressField setText:[NSString stringWithUTF8String:bis_address]];
-            ms_free(bis_address);
-            // return after filling the address, let the user confirm the call by pressing again
-            return;
-        }
-    }
-*/
+    NSString *doorHost=[LinphoneManager.instance lpConfigStringForKey:@"door1_host" inSection:@"doorphone" withDefault:@"unknown"];
 
-    NSString *address = @"sip:Front_Gate@192.168.1.236";
+    NSString *addressTemplate=[LinphoneManager.instance lpConfigStringForKey:@"door_address_template" inSection:@"doorphone" withDefault:@"unknown"];
+    
+    NSString *address=[NSString stringWithFormat:addressTemplate, doorName,doorHost];
+    
     if ([address length] > 0) {
         LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:address];
         [LinphoneManager.instance call:addr];

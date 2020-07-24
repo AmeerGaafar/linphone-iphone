@@ -21,13 +21,13 @@
 
 #import "UIIconButton.h"
 
-@protocol UIGateButtonDelegate
+@protocol UIOpenDoorButtonDelegate
     - (void)onOn;
     - (void)onOff;
     - (bool)onUpdate;
 @end
 
-@interface UIGateButton : UIButton <UIGateButtonDelegate> {
+@interface UIOpenDoorButton : UIButton <UIOpenDoorButtonDelegate> {
 }
 
 - (bool)update;

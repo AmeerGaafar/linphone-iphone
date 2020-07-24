@@ -33,15 +33,15 @@
                             <rect key="frame" x="0.0" y="-14" width="540" height="866"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backyard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-SD-olc" userLabel="logoImage">
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backyard_Gate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-SD-olc" userLabel="logoImage">
                                     <rect key="frame" x="-80" y="400" width="800" height="450"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frontyard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Tr2-il-LD8" userLabel="logoImage">
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Front_Gate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Tr2-il-LD8" userLabel="logoImage">
                                     <rect key="frame" x="-80" y="-40" width="800" height="450"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-FY-icJ" userLabel="callButton" customClass="UIFrontyardCallButton">
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-FY-icJ" userLabel="callButton" customClass="UIDoor1CallButton">
                                     <rect key="frame" x="-16" y="320" width="568" height="113"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <accessibility key="accessibilityConfiguration" label="Call"/>
@@ -52,7 +52,7 @@
                                     <state key="disabled" image="call_audio_start_disabled.png"/>
                                     <state key="highlighted" backgroundImage="color_L.png"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="224" userLabel="callButton" customClass="UIBackyardCallButton">
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="224" userLabel="callButton" customClass="UIDoor2CallButton">
                                     <rect key="frame" x="-16" y="753" width="568" height="113"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <accessibility key="accessibilityConfiguration" label="Call"/>
@@ -76,12 +76,12 @@
         </view>
     </objects>
     <resources>
-        <image name="backyard.jpg" width="1600" height="900"/>
+        <image name="Backyard_Gate.jpg" width="1600" height="900"/>
+        <image name="Front_Gate.jpg" width="1600" height="900"/>
         <image name="call_audio_start_disabled.png" width="58.400001525878906" height="58.400001525878906"/>
         <image name="call_video_start_default.png" width="64" height="58.400001525878906"/>
         <image name="color_A.png" width="2" height="2"/>
         <image name="color_L.png" width="2" height="2"/>
         <image name="dialer_background.png" width="1200" height="1030"/>
-        <image name="frontyard.jpg" width="1600" height="900"/>
     </resources>
 </document>

@@ -21,7 +21,7 @@
 
 #import "UIIconButton.h"
 
-@interface UIFrontyardCallButton : UIIconButton {
+@interface UIDoor1CallButton : UIIconButton {
 }
 
 @property(nonatomic, strong) IBOutlet UITextField *addressField;
