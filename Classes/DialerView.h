@@ -27,9 +27,11 @@
 
 @interface DialerView
 	: TPMultiLayoutViewController <UITextFieldDelegate, UICompositeViewDelegate, MFMailComposeViewControllerDelegate> {
+        NSTimer *picsUpdateTimer;
 }
 
-
+@property(nonatomic, strong) IBOutlet UIImageView *door1Picture;
+@property(nonatomic, strong) IBOutlet UIImageView *door2Picture;
 @property(nonatomic, strong) IBOutlet UITextField *addressField;
 @property(nonatomic, strong) IBOutlet UIButton *addContactButton;
 @property(nonatomic, strong) IBOutlet UICallButton *callButton;
@@ -59,5 +61,5 @@
 - (IBAction)onBackspaceClick:(id)sender;
 
 - (void)setAddress:(NSString *)address;
-
+- (void) updateGatesPics;
 @end

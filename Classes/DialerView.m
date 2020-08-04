@@ -22,6 +22,8 @@
 #import "LinphoneManager.h"
 #import "PhoneMainView.h"
 
+#import <SDWebImage/SDWebImage.h>
+
 @implementation DialerView
 
 #pragma mark - UICompositeViewDelegate Functions
@@ -94,11 +96,30 @@ static UICompositeViewDescription *compositeDescription = nil;
 		linphone_core_enable_video_preview(LC, FALSE);
 	}
 	[_addressField setText:@""];
+ 
+    if (picsUpdateTimer) {
+        [picsUpdateTimer invalidate];
+        picsUpdateTimer = nil;
+    }
+    
+    picsUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:10
+                                     target:self
+                                   selector:@selector(updateGatesPics)
+                                   userInfo:nil
+                                    repeats:YES];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	[NSNotificationCenter.defaultCenter removeObserver:self];
+    if (picsUpdateTimer) {
+        [picsUpdateTimer invalidate];
+        picsUpdateTimer = nil;
+    }
+    
+    [[SDImageCache sharedImageCache]clearMemory];
+    [[SDImageCache sharedImageCache]clearDiskOnCompletion:false];
 }
 
 - (void)viewDidLoad {
@@ -143,8 +164,34 @@ static UICompositeViewDescription *compositeDescription = nil;
 			[_videoCameraSwitch setHidden:FALSE];
 		}
 	}
+
+    [self updateGatesPics];
+
 }
 
+- (void) updateGatesPics {
+
+    NSString * door1Name=[LinphoneManager.instance lpConfigStringForKey:@"door1_name" inSection:@"doorphone" withDefault:@"avatar"];
+    
+    NSString * door2Name=[LinphoneManager.instance lpConfigStringForKey:@"door2_name" inSection:@"doorphone" withDefault:@"avatar"];
+    
+    NSString *door1Host=[LinphoneManager.instance lpConfigStringForKey:@"door1_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *door2Host=[LinphoneManager.instance lpConfigStringForKey:@"door2_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *snapshotTemplate=[LinphoneManager.instance lpConfigStringForKey:@"door_snapshot_template" inSection:@"doorphone" withDefault:@"unknown"];
+
+     NSURL *gate1SnapshotUrl=[NSURL URLWithString: [NSString stringWithFormat:snapshotTemplate, door1Host]];
+
+      NSURL *gate2SnapshotUrl=[NSURL URLWithString: [NSString stringWithFormat:snapshotTemplate, door2Host]];
+    
+    [_door1Picture sd_setImageWithURL:gate1SnapshotUrl
+                     placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", door1Name]] options:SDWebImageFromLoaderOnly | SDWebImageDelayPlaceholder];
+
+    [_door2Picture sd_setImageWithURL:gate2SnapshotUrl
+    placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", door2Name]] options:SDWebImageFromLoaderOnly | SDWebImageDelayPlaceholder];
+
+}
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 										 duration:(NSTimeInterval)duration {
 	[super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];

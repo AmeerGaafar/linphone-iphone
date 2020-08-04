@@ -3,6 +3,8 @@ platform :ios, '9.0'
 source "https://gitlab.linphone.org/BC/public/podspec.git"
 source "https://github.com/CocoaPods/Specs.git"
 
+pod 'SDWebImage', '~> 5.0'
+
 def all_pods
 	if ENV['PODFILE_PATH'].nil?
 		pod 'linphone-sdk', '4.4.0'

@@ -116,7 +116,8 @@ import AVFoundation
 			return true
 		}
 		#endif
-		return false
+
+        return false
 	}
 
 	@objc func allowSpeaker() -> Bool {

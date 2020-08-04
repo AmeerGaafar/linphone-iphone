@@ -51,5 +51,16 @@ _note_
 Linphone reads these params only upon installation to copy them into a database. This means if you change the params, you need to delete the previous app to remove old data before deploying the new one.
 
 
+### TODO
+- Have the dialer picture changed to a cam-shot upon clicking the button (done)
+- Fix the doorbell button debounce issue (done)
+- Indicate that call has been answered - Gate has been open - Call in progress
+- Allow opening the door from dialer screen without establishing a call
+- Parametrize gate open url with an optional message (please push the gate)?
+- Ajust volume
+- record please push the door
+- coat
+- assemble
 
+ 
 

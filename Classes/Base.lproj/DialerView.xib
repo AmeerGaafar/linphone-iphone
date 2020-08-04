@@ -10,6 +10,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DialerView">
             <connections>
                 <outlet property="callButton" destination="224" id="231"/>
+                <outlet property="door1Picture" destination="Tr2-il-LD8" id="m1t-z3-AWI"/>
+                <outlet property="door2Picture" destination="TxC-SD-olc" id="E0D-C1-dT8"/>
                 <outlet property="landscapeView" destination="171" id="mdM-t5-k4V"/>
                 <outlet property="padView" destination="180" id="bxG-9v-Pvj"/>
                 <outlet property="portraitView" destination="171" id="GLX-cG-iOA"/>
@@ -34,11 +36,11 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backyard_Gate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-SD-olc" userLabel="logoImage">
-                                    <rect key="frame" x="-80" y="400" width="800" height="450"/>
+                                    <rect key="frame" x="-132" y="400" width="800" height="450"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Front_Gate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Tr2-il-LD8" userLabel="logoImage">
-                                    <rect key="frame" x="-80" y="-40" width="800" height="450"/>
+                                    <rect key="frame" x="-130" y="-40" width="800" height="450"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-FY-icJ" userLabel="callButton" customClass="UIDoor1CallButton">
