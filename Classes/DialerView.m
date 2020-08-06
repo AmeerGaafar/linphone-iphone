@@ -53,6 +53,18 @@ static UICompositeViewDescription *compositeDescription = nil;
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 
+    [_gate1Talked setHidden: true];
+    [_gate1OpenedGate setHidden: true];
+    [_gate1Talking setHidden: true];
+    [_gate1Unanswered setHidden: true];
+    [_gate2Talked setHidden: true];
+    [_gate2OpenedGate setHidden: true];
+    [_gate2Talking setHidden: true];
+    [_gate2Unanswered setHidden: true];
+    
+    [_door1OpenButton setSelected:false];
+    [_door2OpenButton setSelected:false];
+
 	_padView.hidden =
 		!IPAD && UIInterfaceOrientationIsLandscape(PhoneMainView.instance.mainViewController.currentOrientation);
 
@@ -108,6 +120,18 @@ static UICompositeViewDescription *compositeDescription = nil;
                                    userInfo:nil
                                     repeats:YES];
 
+    if (callStatusUpdateTimer) {
+        [callStatusUpdateTimer invalidate];
+        callStatusUpdateTimer = nil;
+    }
+
+    
+    callStatusUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                     target:self
+                                   selector:@selector(updateCallStatus)
+                                   userInfo:nil
+                                    repeats:YES];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -117,9 +141,17 @@ static UICompositeViewDescription *compositeDescription = nil;
         [picsUpdateTimer invalidate];
         picsUpdateTimer = nil;
     }
-    
+    if (callStatusUpdateTimer) {
+        [callStatusUpdateTimer invalidate];
+        callStatusUpdateTimer = nil;
+    }
+
     [[SDImageCache sharedImageCache]clearMemory];
     [[SDImageCache sharedImageCache]clearDiskOnCompletion:false];
+    
+    [_door1OpenButton setSelected:false];
+    [_door2OpenButton setSelected:false];
+
 }
 
 - (void)viewDidLoad {
@@ -152,9 +184,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onOneLongClick:)];
 	[_oneButton addGestureRecognizer:oneLongGesture];
 	
-	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-																					initWithTarget:self
-																					action:@selector(dismissKeyboards)];
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboards)];
 	
 	[self.view addGestureRecognizer:tap];
 
@@ -166,9 +196,85 @@ static UICompositeViewDescription *compositeDescription = nil;
 	}
 
     [self updateGatesPics];
+    [self updateCallStatus];
 
 }
+- (void) updateCallStatus {
+    //LOGI (@"---- Updating Call Status----");
+    
+    [_gate1Talked setHidden: !_gate1TalkedFlag];
+    [_gate1OpenedGate setHidden: !_gate1OpenedGateFlag];
+    [_gate1Talking setHidden: !_gate1TalkingFlag];
+    [_gate1Unanswered setHidden: !_gate1UnAnsweredFlag];
+    [_gate2Talked setHidden: !_gate2TalkedFlag];
+    [_gate2OpenedGate setHidden: !_gate2OpenedGateFlag];
+    [_gate2Talking setHidden: !_gate2TalkingFlag];
+    [_gate2Unanswered setHidden: !_gate2UnAnsweredFlag];
 
+    [self readGatesStatus];
+}
+
+-(void) readGatesStatus {
+
+    NSString *door1Host=[LinphoneManager.instance lpConfigStringForKey:@"door1_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *door2Host=[LinphoneManager.instance lpConfigStringForKey:@"door2_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *statusTemplate=[LinphoneManager.instance lpConfigStringForKey:@"door_status_template" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSURL *gate1StatusUrl=[NSURL URLWithString: [NSString stringWithFormat:statusTemplate, door1Host]];
+
+    NSURL *gate2StatusUrl=[NSURL URLWithString: [NSString stringWithFormat:statusTemplate, door2Host]];
+
+    NSURLRequest *gate1Request = [[NSURLRequest alloc] initWithURL:gate1StatusUrl];
+    NSURLRequest *gate2Request = [[NSURLRequest alloc] initWithURL:gate2StatusUrl];
+    
+    [NSURLConnection sendAsynchronousRequest:gate1Request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                            
+        NSString *responseData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+        //LOGI(@"--- Gate1 Async Response: %@",responseData);
+        _gate1TalkedFlag=[self parseBooleanStatus: responseData property:@"answered"];
+        _gate1OpenedGateFlag=[self parseBooleanStatus: responseData property:@"door_open"];
+        _gate1TalkingFlag=[self parseBooleanStatus: responseData property:@"active_call"];
+        _gate1UnAnsweredFlag=[self parseBooleanStatus: responseData property:@"pending_request"];
+    }];
+
+    [NSURLConnection sendAsynchronousRequest:gate2Request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString *responseData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+        //LOGI(@"--- Gate1 Async Response: %@",responseData);
+        _gate2TalkedFlag=[self parseBooleanStatus: responseData property:@"answered"];
+        _gate2OpenedGateFlag=[self parseBooleanStatus: responseData property:@"door_open"];
+        _gate2TalkingFlag=[self parseBooleanStatus: responseData property:@"active_call"];
+        _gate2UnAnsweredFlag=[self parseBooleanStatus: responseData property:@"pending_request"];
+    }];
+}
+
+- (bool) parseBooleanStatus:(NSString*) payload
+           property:(NSString *)property {
+
+    NSArray *lines = [payload componentsSeparatedByString:@"\n"];
+    
+    for (NSString* line in lines)
+    {
+        NSArray* lineComps=[line componentsSeparatedByString:@":"];
+
+        if ([lineComps count]==2){
+            NSString* k=lineComps[0];
+            if ([k isEqualToString:property]){
+                NSString* v=lineComps[1];
+                if ([v isEqualToString:@"true"]){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    }
+
+    return false;
+}
 - (void) updateGatesPics {
 
     NSString * door1Name=[LinphoneManager.instance lpConfigStringForKey:@"door1_name" inSection:@"doorphone" withDefault:@"avatar"];
@@ -434,6 +540,51 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 #pragma mark - Action Functions
 
+- (IBAction)onOpenDoor1Click:(id)sender {
+    NSURL *openGateUrl;
+
+    NSString *user=[LinphoneManager.instance lpConfigStringForKey:@"door_open_auth_user" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *password=[LinphoneManager.instance lpConfigStringForKey:@"door_open_auth_pass" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *doorName=[LinphoneManager.instance lpConfigStringForKey:@"door1_name" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *doorHost=[LinphoneManager.instance lpConfigStringForKey:@"door1_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *addressTemplate=[LinphoneManager.instance lpConfigStringForKey:@"door_verbose_open_template" inSection:@"doorphone" withDefault:@"unknown"];
+
+
+    openGateUrl=[NSURL URLWithString: [NSString stringWithFormat:addressTemplate, user,password,doorHost]];
+
+    LOGI(@"------opengate request=%@", openGateUrl);
+    NSData *data = [NSData dataWithContentsOfURL:openGateUrl];
+    NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    LOGI(@"------opengate response=%@", ret);
+
+}
+
+- (IBAction)onOpenDoor2Click:(id)sender {
+    NSURL *openGateUrl;
+
+    NSString *user=[LinphoneManager.instance lpConfigStringForKey:@"door_open_auth_user" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *password=[LinphoneManager.instance lpConfigStringForKey:@"door_open_auth_pass" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *doorName=[LinphoneManager.instance lpConfigStringForKey:@"door2_name" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *doorHost=[LinphoneManager.instance lpConfigStringForKey:@"door2_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *addressTemplate=[LinphoneManager.instance lpConfigStringForKey:@"door_verbose_open_template" inSection:@"doorphone" withDefault:@"unknown"];
+
+
+    openGateUrl=[NSURL URLWithString: [NSString stringWithFormat:addressTemplate, user,password,doorHost]];
+
+    LOGI(@"------opengate request=%@", openGateUrl);
+    NSData *data = [NSData dataWithContentsOfURL:openGateUrl];
+    NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    LOGI(@"------opengate response=%@", ret);
+
+}
 - (IBAction)onAddContactClick:(id)event {
 	[ContactSelection setSelectionMode:ContactSelectionModeEdit];
 	[ContactSelection setAddAddress:[_addressField text]];

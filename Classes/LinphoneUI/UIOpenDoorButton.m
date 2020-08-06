@@ -56,7 +56,14 @@
 
 - (void)touchUp:(id)sender {
     //[self toggle];
+    if (!self.selected){
     self.selected = true;
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(unselect) userInfo:nil repeats:NO];
+    }
+    
+}
+- (void) unselect {
+    self.selected = false;
 }
 
 - (bool)toggle {

@@ -25,6 +25,7 @@
     - (void)onOn;
     - (void)onOff;
     - (bool)onUpdate;
+    - (void) unselect;
 @end
 
 @interface UIOpenDoorButton : UIButton <UIOpenDoorButtonDelegate> {

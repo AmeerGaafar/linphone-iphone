@@ -10,8 +10,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DialerView">
             <connections>
                 <outlet property="callButton" destination="224" id="231"/>
+                <outlet property="door1OpenButton" destination="iyV-70-AjC" id="nbr-GH-Ue3"/>
                 <outlet property="door1Picture" destination="Tr2-il-LD8" id="m1t-z3-AWI"/>
+                <outlet property="door2OpenButton" destination="T9o-C6-VhF" id="R1S-ch-nD0"/>
                 <outlet property="door2Picture" destination="TxC-SD-olc" id="E0D-C1-dT8"/>
+                <outlet property="gate1OpenedGate" destination="wVa-LI-6ZT" id="AtR-O3-IrK"/>
+                <outlet property="gate1Talked" destination="8S9-s5-fU2" id="gww-Kq-0SV"/>
+                <outlet property="gate1Talking" destination="jb6-vC-ypR" id="Rzq-L9-tfl"/>
+                <outlet property="gate1Unanswered" destination="Kou-9A-NSD" id="qF7-7b-2Wg"/>
+                <outlet property="gate2OpenedGate" destination="z12-nu-7RA" id="qUq-Ii-R4Q"/>
+                <outlet property="gate2Talked" destination="z9g-QH-9Ps" id="E9h-mH-XsK"/>
+                <outlet property="gate2Talking" destination="a1M-U1-gD0" id="Zsj-i6-V0M"/>
+                <outlet property="gate2Unanswered" destination="IMP-fS-EVt" id="3Iq-3I-Y26"/>
                 <outlet property="landscapeView" destination="171" id="mdM-t5-k4V"/>
                 <outlet property="padView" destination="180" id="bxG-9v-Pvj"/>
                 <outlet property="portraitView" destination="171" id="GLX-cG-iOA"/>
@@ -36,15 +46,39 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backyard_Gate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-SD-olc" userLabel="logoImage">
-                                    <rect key="frame" x="-132" y="400" width="800" height="450"/>
+                                    <rect key="frame" x="-132" y="432" width="791" height="418"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Front_Gate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Tr2-il-LD8" userLabel="logoImage">
-                                    <rect key="frame" x="-130" y="-40" width="800" height="450"/>
+                                    <rect key="frame" x="-130" y="0.0" width="798" height="410"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-FY-icJ" userLabel="callButton" customClass="UIDoor1CallButton">
-                                    <rect key="frame" x="-16" y="320" width="568" height="113"/>
+                                    <rect key="frame" x="-16" y="320" width="475" height="113"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Call"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                    <state key="normal" image="call_video_start_default.png" backgroundImage="color_A.png"/>
+                                    <state key="disabled" image="call_audio_start_disabled.png"/>
+                                    <state key="highlighted" backgroundImage="color_L.png"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyV-70-AjC" userLabel="callButton" customClass="UIOpenDoorButton">
+                                    <rect key="frame" x="412" y="319" width="128" height="114"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Call"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" image="lock-closed.png" backgroundImage="color_D.png">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="disabled" image="call_audio_start_disabled.png"/>
+                                    <state key="selected" image="lock-open.png" backgroundImage="color_L.png"/>
+                                    <state key="highlighted" backgroundImage="color_L.png"/>
+                                    <connections>
+                                        <action selector="onOpenDoor1Click:" destination="-1" eventType="touchUpInside" id="sbf-ma-hJo"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="224" userLabel="callButton" customClass="UIDoor2CallButton">
+                                    <rect key="frame" x="-16" y="753" width="475" height="113"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <accessibility key="accessibilityConfiguration" label="Call"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -54,16 +88,84 @@
                                     <state key="disabled" image="call_audio_start_disabled.png"/>
                                     <state key="highlighted" backgroundImage="color_L.png"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="224" userLabel="callButton" customClass="UIDoor2CallButton">
-                                    <rect key="frame" x="-16" y="753" width="568" height="113"/>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-talking.png" id="jb6-vC-ypR" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                    <rect key="frame" x="17" y="12" width="72" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Contact avatar">
+                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-door-open.png" id="wVa-LI-6ZT" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                    <rect key="frame" x="460" y="102" width="72" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Contact avatar">
+                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-talked.png" id="8S9-s5-fU2" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                    <rect key="frame" x="460" y="12" width="72" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Contact avatar">
+                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-talking.png" id="a1M-U1-gD0" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                    <rect key="frame" x="17" y="441" width="72" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Contact avatar">
+                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-door-open.png" id="z12-nu-7RA" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                    <rect key="frame" x="460" y="524" width="72" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Contact avatar">
+                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="status-talked.png" id="z9g-QH-9Ps" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                    <rect key="frame" x="460" y="441" width="72" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Contact avatar">
+                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-ringing.png" id="IMP-fS-EVt" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                    <rect key="frame" x="17" y="524" width="72" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Contact avatar">
+                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-ringing.png" id="Kou-9A-NSD" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                    <rect key="frame" x="17" y="102" width="72" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Contact avatar">
+                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9o-C6-VhF" userLabel="callButton" customClass="UIOpenDoorButton">
+                                    <rect key="frame" x="413" y="753" width="127" height="113"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <accessibility key="accessibilityConfiguration" label="Call"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" image="call_video_start_default.png" backgroundImage="color_A.png">
+                                    <state key="normal" image="lock-closed.png" backgroundImage="color_D.png">
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="disabled" image="call_audio_start_disabled.png"/>
+                                    <state key="selected" image="lock-open.png" backgroundImage="color_L.png"/>
                                     <state key="highlighted" backgroundImage="color_L.png"/>
+                                    <connections>
+                                        <action selector="onOpenDoor2Click:" destination="-1" eventType="touchUpInside" id="xOX-nt-AQe"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -83,7 +185,14 @@
         <image name="call_audio_start_disabled.png" width="58.400001525878906" height="58.400001525878906"/>
         <image name="call_video_start_default.png" width="64" height="58.400001525878906"/>
         <image name="color_A.png" width="2" height="2"/>
+        <image name="color_D.png" width="2" height="2"/>
         <image name="color_L.png" width="2" height="2"/>
         <image name="dialer_background.png" width="1200" height="1030"/>
+        <image name="lock-closed.png" width="54" height="54"/>
+        <image name="lock-open.png" width="54" height="54"/>
+        <image name="status-door-open.png" width="67.5" height="67.5"/>
+        <image name="status-ringing.png" width="67.5" height="67.5"/>
+        <image name="status-talked.png" width="67.5" height="67.5"/>
+        <image name="status-talking.png" width="67.5" height="67.5"/>
     </resources>
 </document>

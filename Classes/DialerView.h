@@ -24,10 +24,12 @@
 #import "UICamSwitch.h"
 #import "UICallButton.h"
 #import "UIDigitButton.h"
+#import "UIOpenDoorButton.h"
 
 @interface DialerView
 	: TPMultiLayoutViewController <UITextFieldDelegate, UICompositeViewDelegate, MFMailComposeViewControllerDelegate> {
         NSTimer *picsUpdateTimer;
+        NSTimer *callStatusUpdateTimer;
 }
 
 @property(nonatomic, strong) IBOutlet UIImageView *door1Picture;
@@ -55,11 +57,37 @@
 @property(nonatomic, strong) IBOutlet UICamSwitch *videoCameraSwitch;
 @property(weak, nonatomic) IBOutlet UIView *padView;
 
+@property(weak, nonatomic) IBOutlet UIRoundedImageView *gate1Talked;
+@property(weak, nonatomic) IBOutlet UIRoundedImageView *gate1OpenedGate;
+@property(weak, nonatomic) IBOutlet UIRoundedImageView *gate1Talking;
+@property(weak, nonatomic) IBOutlet UIRoundedImageView *gate1Unanswered;
+
+@property(weak, nonatomic) IBOutlet UIRoundedImageView *gate2Talked;
+@property(weak, nonatomic) IBOutlet UIRoundedImageView *gate2OpenedGate;
+@property(weak, nonatomic) IBOutlet UIRoundedImageView *gate2Talking;
+@property(weak, nonatomic) IBOutlet UIRoundedImageView *gate2Unanswered;
+
+@property(weak, nonatomic) IBOutlet UIOpenDoorButton *door1OpenButton;
+@property(weak, nonatomic) IBOutlet UIOpenDoorButton *door2OpenButton;;
+
+@property  bool gate1TalkedFlag;
+@property  bool gate1TalkingFlag;
+@property  bool gate1OpenedGateFlag;
+@property  bool gate1UnAnsweredFlag;
+@property  bool gate2TalkedFlag;
+@property  bool gate2TalkingFlag;
+@property  bool gate2OpenedGateFlag;
+@property  bool gate2UnAnsweredFlag;
+
 - (IBAction)onAddContactClick:(id)event;
 - (IBAction)onBackClick:(id)event;
 - (IBAction)onAddressChange:(id)sender;
 - (IBAction)onBackspaceClick:(id)sender;
-
+- (IBAction)onOpenDoor1Click:(id)sender;
+- (IBAction)onOpenDoor2Click:(id)sender;
 - (void)setAddress:(NSString *)address;
+- (void) readGatesStatus;
 - (void) updateGatesPics;
+- (void) updateCallStatus;
+- (bool) parseBooleanStatus:(NSString*) payload property:(NSString *)property;
 @end
