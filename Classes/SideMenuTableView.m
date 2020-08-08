@@ -139,7 +139,7 @@
 														 (int)indexPath.row + (idx <= indexPath.row ? 1 : 0));
 		if (proxy) {
 			cell.textLabel.text = [NSString stringWithUTF8String:linphone_proxy_config_get_identity(proxy)];
-			cell.imageView.image = [StatusBarView imageForState:linphone_proxy_config_get_state(proxy)];
+            cell.imageView.image = [UIImage imageNamed:@"led_connected.png"];
 		} else {
 			LOGE(@"Invalid index requested, no proxy for row %d", indexPath.row);
 		}

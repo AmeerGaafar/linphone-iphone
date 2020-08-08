@@ -34,10 +34,12 @@
 @property(weak, nonatomic) IBOutlet UIView *incallView;
 @property(weak, nonatomic) IBOutlet UIView *outcallView;
 
+@property  int gate1Connected;
+@property  int gate2Connected;
+@property NSTimer* gateCountingTimer;
+
 - (IBAction)onSecurityClick:(id)sender;
 - (IBAction)onSideMenuClick:(id)sender;
 - (IBAction)onRegistrationStateClick:(id)sender;
-- (int)countOnlineGates;
-//- (bool)isGateHealty:(NSString *)host;
-+ (UIImage *)imageForState:(LinphoneRegistrationState)state;
+- (void) updateGatesReachabilityStatus;
 @end

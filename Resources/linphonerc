@@ -100,16 +100,17 @@ show_local=0
 size=vga
 
 [doorphone]
-door_open_auth_user=user
-door_open_auth_pass=password
+door_open_auth_user=V8Hq7ui626F8h0t
+door_open_auth_pass=XYZ2iSF72U445WS
 door_open_template=http://%@:%@@%@:8080/open
 door_verbose_open_template=http://%@:%@@%@:8080/open-verbosed
 door_snapshot_template=http://%@:8080/periodic-snapshot
 door_status_template=http://%@:8080/door-status
+door_health_template=http://%@:8080/health
 door_address_template=sip:%@@%@
 door1_name=Front_Gate
 door1_host=192.168.1.236
 door2_name=Backyard_Gate
-door2_host=192.168.1.236
+door2_host=192.168.1.237
 
 

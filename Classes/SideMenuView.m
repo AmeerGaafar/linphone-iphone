@@ -67,7 +67,7 @@
 		const LinphoneAddress *addr = linphone_proxy_config_get_identity_address(default_proxy);
 		[ContactDisplay setDisplayNameLabel:_nameLabel forAddress:addr];
 		_addressLabel.text = addr? [NSString stringWithUTF8String:linphone_address_as_string(addr)] : NSLocalizedString(@"No address", nil);
-		_presenceImage.image = [StatusBarView imageForState:linphone_proxy_config_get_state(default_proxy)];
+        _presenceImage.image = [UIImage imageNamed:@"led_connected.png"];
 	} else {
 		_nameLabel.text = linphone_core_get_proxy_config_list(LC) ? NSLocalizedString(@"No default account", nil) : NSLocalizedString(@"No account", nil);
 		// display direct IP:port address so that we can be reached

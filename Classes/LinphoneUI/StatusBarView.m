@@ -69,14 +69,72 @@
 										   selector:@selector(onCallEncryptionChanged:)
 											   name:kLinphoneCallEncryptionChanged
 											 object:nil];
-
-	// Update to default state
-	LinphoneProxyConfig *config = linphone_core_get_default_proxy_config(LC);
-	messagesUnreadCount = lp_config_get_int(linphone_core_get_config(LC), "app", "voice_mail_messages_count", 0);
-
-	[self proxyConfigUpdate:config];
+    _gate1Connected=-1;
+    _gate2Connected=-1;
+    
+    [ self updateGatesReachabilityStatus ];
+	
 	[self updateUI:linphone_core_get_calls_nb(LC)];
 	[self updateVoicemail];
+    
+
+    [self generalStatusUpdate];
+    
+       if (_gateCountingTimer) {
+           [_gateCountingTimer invalidate];
+           _gateCountingTimer = nil;
+       }
+       
+       _gateCountingTimer = [NSTimer scheduledTimerWithTimeInterval:5
+                                     target:self
+                                     selector:@selector(updateGatesReachabilityStatus)
+                                     userInfo:nil
+                                     repeats:YES];
+}
+- (void) updateGatesReachabilityStatus {
+    //LOGI(@"-------------- update Gates Status ----------------------");
+    [self generalStatusUpdate];
+    
+    NSString *door1Host=[LinphoneManager.instance lpConfigStringForKey:@"door1_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *door2Host=[LinphoneManager.instance lpConfigStringForKey:@"door2_host" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSString *healthTemplate=[LinphoneManager.instance lpConfigStringForKey:@"door_health_template" inSection:@"doorphone" withDefault:@"unknown"];
+
+    NSURL *gate1HealthUrl=[NSURL URLWithString: [NSString stringWithFormat:healthTemplate, door1Host]];
+
+    NSURL *gate2HealthUrl=[NSURL URLWithString: [NSString stringWithFormat:healthTemplate, door2Host]];
+
+    NSURLRequest *gate1Request = [[NSURLRequest alloc] initWithURL:gate1HealthUrl];
+    NSURLRequest *gate2Request = [[NSURLRequest alloc] initWithURL:gate2HealthUrl];
+    
+    [NSURLConnection sendAsynchronousRequest:gate1Request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                            
+        NSString *responseData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+        //LOGI(@"--- Gate1 Async Response: %@",responseData);
+        if ([responseData hasPrefix:@"Healthy!"]){
+            _gate1Connected=1;
+            //LOGI(@"--- Gate1 Connected-----------");
+        } else {
+            _gate1Connected=0;
+            //LOGI(@"--- Gate1 DisConnected-----------");
+        }
+    }];
+
+    [NSURLConnection sendAsynchronousRequest:gate2Request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString *responseData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+        //LOGI(@"--- Gate2 Async Response: %@",responseData);
+        if ([responseData hasPrefix:@"Healthy!"]){
+            _gate2Connected=1;
+            //LOGI(@"--- Gate2 Connected-----------");
+        } else {
+            _gate2Connected=0;
+            //LOGI(@"--- Gate2 DisConnected-----------");
+        }
+    }];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -102,13 +160,19 @@
 		[securityDialog dismiss];
 		securityDialog = nil;
 	}
+    
+    if (_gateCountingTimer) {
+        [_gateCountingTimer invalidate];
+        _gateCountingTimer = nil;
+    }
+
 }
 
 #pragma mark - Event Functions
 
 - (void)registrationUpdate:(NSNotification *)notif {
-	LinphoneProxyConfig *config = linphone_core_get_default_proxy_config(LC);
-	[self proxyConfigUpdate:config];
+	//LinphoneProxyConfig *config = linphone_core_get_default_proxy_config(LC);
+	[self generalStatusUpdate];
 }
 
 - (void)globalStateUpdate:(NSNotification *)notif {
@@ -166,99 +230,36 @@
 }
 
 #pragma mark -
-+ (UIImage *)imageForState:(LinphoneRegistrationState)state {
-
-    if (LinphoneGlobalOn && !linphone_core_is_network_reachable(LC)) {
-        return [UIImage imageNamed:@"led_error.png"];
-    } else {
-        return [UIImage imageNamed:@"led_connected.png"];
-    }
-}
-
-/*
-+ (UIImage *)imageForState:(LinphoneRegistrationState)state {
-	switch (state) {
-		case LinphoneRegistrationFailed:
-			return [UIImage imageNamed:@"led_error.png"];
-		case LinphoneRegistrationCleared:
-		case LinphoneRegistrationNone:
-			return [UIImage imageNamed:@"led_disconnected.png"];
-		case LinphoneRegistrationProgress:
-			return [UIImage imageNamed:@"led_inprogress.png"];
-		case LinphoneRegistrationOk:
-			return [UIImage imageNamed:@"led_connected.png"];
-	}
-}
-*/
-/*
-- (void)proxyConfigUpdate:(LinphoneProxyConfig *)config {
-	LinphoneRegistrationState state = LinphoneRegistrationNone;
-	NSString *message = nil;
-	LinphoneGlobalState gstate = linphone_core_get_global_state(LC);
-	
-	if ([PhoneMainView.instance.currentView equal:AssistantView.compositeViewDescription] || [PhoneMainView.instance.currentView equal:CountryListView.compositeViewDescription]) {
-		message = NSLocalizedString(@"Configuring account", nil);
-	} else if (gstate == LinphoneGlobalOn && !linphone_core_is_network_reachable(LC)) {
-		message = NSLocalizedString(@"Network down", nil);
-	} else if (gstate == LinphoneGlobalConfiguring) {
-		message = NSLocalizedString(@"Fetching remote configuration", nil);
-	} else if (config == NULL) {
-		state = LinphoneRegistrationNone;
-		if (linphone_core_get_proxy_config_list(LC) != NULL) {
-			message = NSLocalizedString(@"No default account", nil);
-		} else {
-			message = NSLocalizedString(@"No account configured", nil);
-		}
-
-	} else {
-		state = linphone_proxy_config_get_state(config);
-
-		switch (state) {
-			case LinphoneRegistrationOk:
-				message = NSLocalizedString(@"Connected", nil);
-				break;
-			case LinphoneRegistrationNone:
-			case LinphoneRegistrationCleared:
-				message = NSLocalizedString(@"Not connected", nil);
-				break;
-			case LinphoneRegistrationFailed:
-				message = NSLocalizedString(@"Connection failed", nil);
-				break;
-			case LinphoneRegistrationProgress:
-				message = NSLocalizedString(@"Connection in progress", nil);
-				break;
-			default:
-				break;
-		}
-	}
-	[_registrationState setTitle:message forState:UIControlStateNormal];
-	_registrationState.accessibilityValue = message;
-	[_registrationState setImage:[self.class imageForState:state] forState:UIControlStateNormal];
-}
-*/
-- (void)proxyConfigUpdate:(LinphoneProxyConfig *)config {
-    LinphoneRegistrationState state = LinphoneRegistrationNone;
+- (void)generalStatusUpdate {
     NSString *message = nil;
-    LinphoneGlobalState gstate = linphone_core_get_global_state(LC);
     int count=0;
-
-    if (gstate == LinphoneGlobalOn && !linphone_core_is_network_reachable(LC)) {
-        message = NSLocalizedString(@"Network down", nil);
+    UIImage * led;
+    
+    if (_gate1Connected==1) count++;
+    if (_gate2Connected==1) count++;
+    //LOGI(@"--- Gate Count %d-----------",count);
+    
+    if (_gate1Connected==-1 || _gate2Connected==-1){
+        message = @"Checking Gates Connectivity...";
+        led = [UIImage imageNamed:@"led_disconnected.png"];
+    } else if (count == 0){
+        message = @"Gates Unreachable!";
+        led = [UIImage imageNamed:@"led_error.png"];
+    } else if (count ==1){
+        message = [NSString stringWithFormat:@"1 of 2 Gates Connected"];
+        led = [UIImage imageNamed:@"led_semi_connected.png"];
     } else {
-        count =  [self countOnlineGates ];
-        message = [NSString stringWithFormat:@"%d Gates Configured", count];
+        message = [NSString stringWithFormat:@"2 Gates Connected"];
+        led = [UIImage imageNamed:@"led_connected.png"];
     }
-
+    
     [_registrationState setTitle:message forState:UIControlStateNormal];
     _registrationState.accessibilityValue = message;
-    [_registrationState setImage:[self.class imageForState:state] forState:UIControlStateNormal];
+    [_registrationState setImage:led forState:UIControlStateNormal];
 }
 
 #pragma mark -
 
-- (int)countOnlineGates {
-    return 2;
-}
 - (void)updateUI:(BOOL)inCall {
 	BOOL hasChanged = (_outcallView.hidden != inCall);
 

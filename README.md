@@ -65,12 +65,15 @@ Linphone reads these params only upon installation to copy them into a database.
 - Indicate that call has been answered - Gate has been open - Call in progress (done)
 - Allow opening the door from dialer screen without establishing a call (done)
 - Parametrize gate open url with an optional message "please push the gate"(done)
-- New Logo
-- Ajust volume
-- switch playsound to use pa instead of alsa
-- record please push the door 
-- coat
-- assemble
+- switch playsound to use pa instead of alsa (done)
+- Ajust volume(done)
+- record please push the door(done)
+- New Logo (done)
+- coat (done)
+- assemble front (done)
+- assemble back
+- test new buttons algos
+
 =======
 _note_
 To build, hack, etc, please read the original project readme in ORG_README.MD

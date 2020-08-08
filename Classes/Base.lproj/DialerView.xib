@@ -45,11 +45,11 @@
                             <rect key="frame" x="0.0" y="-14" width="540" height="866"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backyard_Gate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-SD-olc" userLabel="logoImage">
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_gate_pic_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-SD-olc" userLabel="logoImage">
                                     <rect key="frame" x="-132" y="432" width="791" height="418"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Front_Gate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Tr2-il-LD8" userLabel="logoImage">
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_gate_pic_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tr2-il-LD8" userLabel="logoImage">
                                     <rect key="frame" x="-130" y="0.0" width="798" height="410"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -137,7 +137,7 @@
                                     </accessibility>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-ringing.png" id="IMP-fS-EVt" userLabel="avatarImage" customClass="UIRoundedImageView">
-                                    <rect key="frame" x="17" y="524" width="72" height="72"/>
+                                    <rect key="frame" x="17" y="441" width="72" height="72"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <accessibility key="accessibilityConfiguration" label="Contact avatar">
                                         <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -145,7 +145,7 @@
                                     </accessibility>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="status-ringing.png" id="Kou-9A-NSD" userLabel="avatarImage" customClass="UIRoundedImageView">
-                                    <rect key="frame" x="17" y="102" width="72" height="72"/>
+                                    <rect key="frame" x="17" y="12" width="72" height="72"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <accessibility key="accessibilityConfiguration" label="Contact avatar">
                                         <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -180,8 +180,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Backyard_Gate.jpg" width="1600" height="900"/>
-        <image name="Front_Gate.jpg" width="1600" height="900"/>
         <image name="call_audio_start_disabled.png" width="58.400001525878906" height="58.400001525878906"/>
         <image name="call_video_start_default.png" width="64" height="58.400001525878906"/>
         <image name="color_A.png" width="2" height="2"/>
@@ -190,6 +188,7 @@
         <image name="dialer_background.png" width="1200" height="1030"/>
         <image name="lock-closed.png" width="54" height="54"/>
         <image name="lock-open.png" width="54" height="54"/>
+        <image name="no_gate_pic_placeholder.png" width="1024" height="576"/>
         <image name="status-door-open.png" width="67.5" height="67.5"/>
         <image name="status-ringing.png" width="67.5" height="67.5"/>
         <image name="status-talked.png" width="67.5" height="67.5"/>
