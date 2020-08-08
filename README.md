@@ -68,6 +68,7 @@ Linphone reads these params only upon installation to copy them into a database.
 - switch playsound to use pa instead of alsa (done)
 - Ajust volume(done)
 - record please push the door(done)
+- connectivity check (done)
 - New Logo (done)
 - coat (done)
 - assemble front (done)
