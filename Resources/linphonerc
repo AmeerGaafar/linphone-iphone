@@ -100,8 +100,8 @@ show_local=0
 size=vga
 
 [doorphone]
-door_open_auth_user=V8Hq7ui626F8h0t
-door_open_auth_pass=XYZ2iSF72U445WS
+door_open_auth_user=user
+door_open_auth_pass=pass
 door_open_template=http://%@:%@@%@:8080/open
 door_verbose_open_template=http://%@:%@@%@:8080/open-verbosed
 door_snapshot_template=http://%@:8080/periodic-snapshot
